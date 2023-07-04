@@ -1,6 +1,6 @@
-
 import './App.css';
 import SimpsonComponent from "./components/SimpsonComponent";
+import RickandmortyComponent from "./components/RickandmortyComponent";
 
 function App() {
     return (<>
@@ -26,7 +26,8 @@ function App() {
                 'але все ж лишається симпатичним.'}
             photo={'https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'}
 
-        /><SimpsonComponent
+        />
+        <SimpsonComponent
             name={'Marge'}
             surname={'Simpson'}
             age={38}
@@ -42,7 +43,8 @@ function App() {
                 'Отлично готовит, особенно славятся её свиные отбивные и зефир. Любимое блюдо — лапша с маслом.'}
             photo={'https://upload.wikimedia.org/wikipedia/ru/0/0b/Marge_Simpson.png'}
 
-        /><SimpsonComponent
+        />
+        <SimpsonComponent
             name={'Lisa'}
             surname={'Simpson'}
             age={9}
@@ -51,7 +53,8 @@ function App() {
                 'Симпсонов прежде всего своим умом и рассудительностью.'}
             photo={'https://upload.wikimedia.org/wikipedia/ru/e/ec/Lisa_Simpson.png'}
 
-        /><SimpsonComponent
+        />
+        <SimpsonComponent
             name={'Maggie'}
             surname={'Simpson'}
             age={1}
@@ -64,7 +67,56 @@ function App() {
                 'на телеканале Fox, дебют произошёл 17 декабря 1989 года.'}
             photo={'https://upload.wikimedia.org/wikipedia/ru/9/9d/Maggie_Simpson.png'}
         />
-    </>);
-}
+        <RickandmortyComponent
+            id={112}
+            name={'Eric McMan'}
+            status={'Alive'}
+            species={'Human'}
+            gender={'Male'}
+            photo={'https://rickandmortyapi.com/api/character/avatar/112.jpeg'}
+            />
+        <RickandmortyComponent
+            id={518}
+            name={'Wasp Morty'}
+            status={'Alive'}
+            species={'Animal'}
+            gender={'Male'}
+            photo={'https://rickandmortyapi.com/api/character/avatar/518.jpeg'}
+            />
+        <RickandmortyComponent
+            id={591}
+            name={'High Pilot'}
+            status={'unknown'}
+            species={'Human'}
+            gender={'Male'}
+            photo={'https://rickandmortyapi.com/api/character/avatar/591.jpeg'}
+            />
+        <RickandmortyComponent
+            id={436}
+            name={'Giant Testicle Monster'}
+            status={'Alive'}
+            species={'Alien'}
+            gender={'unknown'}
+            photo={'https://rickandmortyapi.com/api/character/avatar/436.jpeg'}
+            />
+        <RickandmortyComponent
+            id={589}
+            name={'Snake Reporter'}
+            status={'Alive'}
+            species={'Animal'}
+            gender={'Male'}
+            photo={'https://rickandmortyapi.com/api/character/avatar/589.jpeg'}
+            />
+        <RickandmortyComponent
+            id={661}
+            name={'Morty’s Girlfriend'}
+            status={'Alive'}
+            species={'Human'}
+            gender={'Female'}
+            photo={'https://rickandmortyapi.com/api/character/avatar/661.jpeg'}
+            />
+
+        </>);
+        }
 
 export default App;
