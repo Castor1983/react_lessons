@@ -1,8 +1,6 @@
 import Post from './PostComponent/Post.js';
 import {useEffect, useState} from 'react';
 
-
-
 export const Posts = () => {
     const [posts, setPosts] = useState(null);
 
