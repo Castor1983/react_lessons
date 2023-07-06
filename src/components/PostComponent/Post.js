@@ -6,7 +6,7 @@ const Post = (props) => {
         <div className={styles.container}>
             <h6>{post.id}</h6>
             <h6>{post.title}</h6>
-            <button onClick={()=>handleShow(post.id)}>More info</button>
+            <button className={styles.button} onClick={()=>handleShow(post.id)}>More info</button>
         </div>
     )
 }
