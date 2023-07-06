@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Posts } from './components/Posts'
+import { Launches } from './components/Launches'
 
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
   return (
       <>
 
-        <Posts/>
+        <Launches/>
 
 
       </>
