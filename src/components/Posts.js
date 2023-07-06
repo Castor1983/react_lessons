@@ -1,9 +1,10 @@
 import Post from './PostComponent/Post.js';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
+
 
 
 export const Posts = () => {
-    const [ posts, setPosts ] = useState(null);
+    const [posts, setPosts] = useState(null);
 
     useEffect(() => {
 
@@ -13,11 +14,11 @@ export const Posts = () => {
                 setPosts(posts);
 
             })
-    },[]);
+    }, []);
 
 
     const handleShow = (id) => {
-        setPosts([ ...posts ].filter((post) => post.id !== id));
+        setPosts([...posts].filter((post) => post.id !== id));
     };
 
     return (
