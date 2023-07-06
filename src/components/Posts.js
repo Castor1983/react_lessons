@@ -5,9 +5,6 @@ import { useEffect, useState } from 'react';
 export const Posts = () => {
     const [ posts, setPosts ] = useState(null);
 
-
-
-
     useEffect(() => {
 
         fetch('https://jsonplaceholder.typicode.com/posts')
@@ -16,20 +13,12 @@ export const Posts = () => {
                 setPosts(posts);
 
             })
-
-
     },[]);
 
 
-    const handleDelete = (id) => {
+    const handleShow = (id) => {
         setPosts([ ...posts ].filter((post) => post.id !== id));
     };
-
-    const handleClick = (value) => {
-        alert(`User id is ${value}`);
-
-    };
-
 
     return (
         <>
@@ -38,8 +27,7 @@ export const Posts = () => {
                     <Post
                         key={id}
                         post={post}
-                        handleClick={handleClick}
-                        handleDelete={handleDelete}
+                        handleShow={handleShow}
                     />);
             })}
         </>);
