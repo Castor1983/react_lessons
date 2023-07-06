@@ -1,8 +1,8 @@
-import PostComponent from './PostComponent/PostComponent.js';
+import Post from './PostComponent/Post.js';
 import { useEffect, useState } from 'react';
-import { logDOM } from '@testing-library/react';
 
-export const PostContainer = () => {
+
+export const Posts = () => {
     const [ posts, setPosts ] = useState(null);
 
 
@@ -35,7 +35,7 @@ export const PostContainer = () => {
         <>
             {posts?.map((post, id) => {
                 return (
-                    <PostComponent
+                    <Post
                         key={id}
                         post={post}
                         handleClick={handleClick}

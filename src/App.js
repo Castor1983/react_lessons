@@ -1,15 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
 
-import { PostContainer } from './components/PostContainer'
-import { useState } from 'react';
+import './App.css';
+import { Posts } from './components/Posts'
+
 
 const App = () => {
 
   return (
       <>
 
-        <PostContainer/>
+        <Posts/>
 
 
       </>

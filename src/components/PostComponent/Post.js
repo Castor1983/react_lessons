@@ -1,6 +1,6 @@
 import styles from "./PostComponent.module.scss";
 
-const PostComponent = (props) => {
+const Post = (props) => {
     const { post, handleClick, handleDelete } = props
     return (
         <div className={styles.container}>
@@ -13,4 +13,4 @@ const PostComponent = (props) => {
     )
 }
 
-export default PostComponent;
+export default Post;
