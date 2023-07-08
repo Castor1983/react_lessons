@@ -3,9 +3,9 @@ const App = () => {
     return (
         <>
 
-
+            App
         </>
     );
 };
 
-export default App;
+export {App};
