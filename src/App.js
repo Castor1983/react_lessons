@@ -1,18 +1,11 @@
-
-import './App.css';
-import { Posts } from './components/Posts'
-
-
 const App = () => {
 
-  return (
-      <>
-
-        <Posts/>
+    return (
+        <>
 
 
-      </>
-  );
+        </>
+    );
 };
 
 export default App;
