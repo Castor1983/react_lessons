@@ -1,4 +1,3 @@
-import './App.css';
 import SimpsonComponent from "./components/SimpsonComponent";
 import RickandmortyComponent from "./components/RickandmortyComponent";
 
@@ -74,7 +73,7 @@ function App() {
             species={'Human'}
             gender={'Male'}
             photo={'https://rickandmortyapi.com/api/character/avatar/112.jpeg'}
-            />
+        />
         <RickandmortyComponent
             id={518}
             name={'Wasp Morty'}
@@ -82,7 +81,7 @@ function App() {
             species={'Animal'}
             gender={'Male'}
             photo={'https://rickandmortyapi.com/api/character/avatar/518.jpeg'}
-            />
+        />
         <RickandmortyComponent
             id={591}
             name={'High Pilot'}
@@ -90,7 +89,7 @@ function App() {
             species={'Human'}
             gender={'Male'}
             photo={'https://rickandmortyapi.com/api/character/avatar/591.jpeg'}
-            />
+        />
         <RickandmortyComponent
             id={436}
             name={'Giant Testicle Monster'}
@@ -98,7 +97,7 @@ function App() {
             species={'Alien'}
             gender={'unknown'}
             photo={'https://rickandmortyapi.com/api/character/avatar/436.jpeg'}
-            />
+        />
         <RickandmortyComponent
             id={589}
             name={'Snake Reporter'}
@@ -106,7 +105,7 @@ function App() {
             species={'Animal'}
             gender={'Male'}
             photo={'https://rickandmortyapi.com/api/character/avatar/589.jpeg'}
-            />
+        />
         <RickandmortyComponent
             id={661}
             name={'Morty’s Girlfriend'}
@@ -114,9 +113,9 @@ function App() {
             species={'Human'}
             gender={'Female'}
             photo={'https://rickandmortyapi.com/api/character/avatar/661.jpeg'}
-            />
+        />
 
-        </>);
-        }
+    </>);
+}
 
-export default App;
+export {App};
