@@ -1,16 +1,10 @@
-
-import './App.css';
 import { Launches } from './components/Launches'
-
 
 const App = () => {
 
   return (
       <>
-
         <Launches/>
-
-
       </>
   );
 };

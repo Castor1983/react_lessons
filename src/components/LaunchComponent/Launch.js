@@ -1,12 +1,12 @@
 import styles from "./LaunchComponent.module.scss";
 
-const Launch = (props) => {
-    const { launch,} = props
+const Launch = ({launch}) => {
+    const {mission_name, launch_year, links: {mission_patch_small}} = launch;
     return (
         <div className={styles.container}>
-            <h6>Mission name: {launch.mission_name}</h6>
-            <h6>Launch year: {launch.launch_year}</h6>
-            <img src ={launch.links.mission_patch_small} alt={launch.mission_name} />
+            <h6>Mission name: {mission_name}</h6>
+            <h6>Launch year: {launch_year}</h6>
+            <img src={mission_patch_small} alt={mission_name}/>
 
         </div>
     )
