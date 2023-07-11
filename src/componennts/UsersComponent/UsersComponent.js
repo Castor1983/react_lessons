@@ -11,7 +11,7 @@ const UsersComponent = ({setUserId}) => {
     });
 
     return (
-        <div>
+        <div style={{width: '45%'}}>
             {users.map(user => <UserComponent key ={user.id} user ={user} setUserId = {setUserId}/>)}
         </div>
     );

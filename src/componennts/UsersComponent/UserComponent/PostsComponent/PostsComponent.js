@@ -10,7 +10,7 @@ const PostsComponent = ({userId}) => {
     });
 
     return (
-        <div>
+        <div style={{width: '45%'}}>
             {posts.map(post => <PostComponent key = {post.id} post = {post}/>)}
         </div>
     );

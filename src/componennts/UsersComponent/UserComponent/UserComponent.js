@@ -7,9 +7,9 @@ const UserComponent = (props) => {
     const {id, name, username} = user;
     return (
         <div className={styles.container}>
-            <h2>id: {id}</h2>
-            <h3>name: {name}</h3>
-            <h4>username: {username}</h4>
+            <h2>User id: {id}</h2>
+            <h3>Name: {name}</h3>
+            <h4>Username: {username}</h4>
             <button className={styles.button} onClick={() => setUserId(id)}>Get posts</button>
 
         </div>

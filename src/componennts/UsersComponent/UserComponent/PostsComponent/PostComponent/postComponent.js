@@ -7,9 +7,9 @@ const PostComponent = ({post}) => {
     return (
         <div className={styles.container}>
 
-            <h2>id: {id}</h2>
-            <h4>title: {title}</h4>
-            <h6>body: {body}</h6>
+            <h2> Post id: {id}</h2>
+            <h4>Title: {title}</h4>
+            <h6>Info: {body}</h6>
         </div>
     );
 };

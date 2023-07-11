@@ -6,9 +6,10 @@ const App = () => {
 const [userId, setUserId] = useState(null)
     return (
         <>
-
-            <UsersComponent setUserId = {setUserId}/>
-            {userId&&<PostsComponent userId = {userId}/>}
+            <div style={{display: 'flex', justifyContent: 'space-around', width: '100%'}}>
+                <UsersComponent setUserId = {setUserId}/>
+                {userId&&<PostsComponent userId = {userId}/>}
+            </div>
 
         </>
     );
