@@ -1,0 +1,21 @@
+.container {
+  background: linear-gradient(60deg, yellow, lightgreen);
+  padding-left: 50px;
+  margin-bottom: 20px;
+  font-size: x-large;
+  width: 30vw;
+  border: 1px black solid;
+  border-radius: 10px;
+  color: blue;
+}
+.button{
+  width: 40%;
+  background: linear-gradient(to right, darkblue, lightblue);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px rgb(0, 0, 0);
+  font-size: large;
+  padding: 10px;
+  margin: 10px;
+}
