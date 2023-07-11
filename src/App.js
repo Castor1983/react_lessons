@@ -1,4 +1,3 @@
-
 import {Child2} from "./components/Child2/Child2";
 import {Child1} from "./components/Child1/Child1";
 
