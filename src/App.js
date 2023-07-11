@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {Users} from "./components/UsrersComponent/Users";
+
 const App = () => {
     const [users, setUsers] = useState([])
 
@@ -11,7 +12,6 @@ const App = () => {
 
     return (
         <>
-
             <Users users={users}/>
         </>
     );
