@@ -1,12 +1,12 @@
-import React, {useContext} from 'react';
-import {TransferContext} from "../Child2_2/Child2_2";
+import {useContext} from "react";
+import {TransferContext} from "../../App";
 
 const Child1_1 = () => {
-    const resultTransfer = useContext(TransferContext)
+   const {info} = useContext(TransferContext)
 
     return (
         <div>
-            {resultTransfer}
+            {info}
         </div>
     );
 };
