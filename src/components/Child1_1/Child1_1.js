@@ -1,22 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {TransferContext} from "../Child2_2/Child2_2";
 
+const Child1_1 = () => {
+    const resultTransfer = useContext(TransferContext)
 
-
-const Child1_1 = ({user, setUserId, setName, showPosts, setShowPosts}) => {
-    const {id, name, username, email} = user;
     return (
-        <div >
-            <div>id: {id}</div>
-            <div>name: {name}</div>
-            <div>username: {username}</div>
-            <div>email: {email}</div>
-            <button  onClick={() => {
-                setUserId(id)
-                setName(name)
-                setShowPosts(!showPosts)
-            }}>{showPosts ? 'Hide posts' : 'Show posts'}</button>
-
-
+        <div>
+            {resultTransfer}
         </div>
     );
 };

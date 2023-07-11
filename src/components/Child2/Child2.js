@@ -1,18 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import {Child2_2} from "../Child2_2/Child2_2";
 
-import {Child2_1} from "../Child2_1/Child2_1";
-
-const Child2     = ({userId, name}) => {
-    const [posts, setPosts] = useState([])
-
-    useEffect(() => {
-        fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
-            .then(res => res.json())
-            .then(posts => setPosts(posts))
-    })
+const Child2 = () => {
     return (
         <div>
-            {posts.map(post => <Child2_1 key={post.id} post={post} name={name}/>)}
+<Child2_2/>
         </div>
     );
 };
