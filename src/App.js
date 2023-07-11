@@ -4,7 +4,7 @@ import {UsersComponent} from "./components/UsersComponent/UsersComponent";
 import {PostsComponent} from "./components/PostsComponent/PostsComponent";
 const App = () => {
     const [users, setUsers] = useState([])
-
+const [userId, setUserId] = useState  (null)
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
@@ -12,11 +12,11 @@ const App = () => {
     },[])
 
     return (
-        <>
+        <div style={{display: 'flex', justifyContent: 'space-around', width: '100%'}}>
 
-            <UsersComponent users={users}/>
-            <PostsComponent/>
-        </>
+            <UsersComponent users={users} setUserId={setUserId}/>
+            {userId&&<PostsComponent userId={userId}/>}
+        </div>
     );
 };
 

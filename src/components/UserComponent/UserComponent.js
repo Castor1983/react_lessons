@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './UserComponent.module.scss'
-const UserComponent = ({user}) => {
+const UserComponent = ({user, setUserId}) => {
     const {id, name, username, email} = user;
     return (
         <div className={styles.container}>
@@ -9,7 +9,7 @@ const UserComponent = ({user}) => {
             <div>name: {name}</div>
             <div>username: {username}</div>
             <div>email: {email}</div>
-            <button className={styles.button}>Show posts</button>
+            <button className={styles.button} onClick={()=> setUserId(id)}>Show posts</button>
         </div>
     );
 };
