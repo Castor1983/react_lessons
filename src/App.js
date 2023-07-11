@@ -8,7 +8,7 @@ const App = () => {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(users => setUsers(users))
-    },[]);
+    }, []);
 
     return (
         <>
