@@ -1,15 +1,13 @@
 import {CreateCarForm} from "./components/CreateCarForm/CreateCarForm";
-import {UpdateCarForm} from "./components/UpdateCarForm/UpdateCarForm";
-import {DeleteCarForm} from "./components/DeleteCarForm/DeleteCarForm";
-import styles from './components/Component.module.css'
+
+import styles from './components/CreateCarForm/Component.module.css'
+import {CarsConteiner} from "./components/CarsConteiner/CarsConteiner";
 const App = () => {
 
     return (
         <div className={styles.wrapper}>
-
+            <CarsConteiner/>
             <CreateCarForm/>
-            <UpdateCarForm/>
-            <DeleteCarForm/>
         </div>
     );
 };

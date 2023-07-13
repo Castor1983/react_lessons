@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+}
+
+.wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    background: linear-gradient(60deg, yellow, lightgreen);
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 15px;
+    color: blue;
+    margin: 10px;
+}
+button {
+    width: 30%;
+    background: linear-gradient(to right, darkblue, lightblue);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+}
