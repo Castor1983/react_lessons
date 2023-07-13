@@ -1,13 +1,16 @@
-import {AddNewUserForm} from "./components/AddNewUserForm/AddNewUserForm";
+import {AddNewUserPage} from "./components/AddNewUserPage/AddNewUserPage";
+import {AddNewCommentPage} from "./components/AddNewCommentPage/AddNewCommentPage";
+import styles from './components/AddNewUserPage/AddNewUserPage.module.css'
 
 
 const App = () => {
 
     return (
-        <>
+        <div className={styles.wrapper}>
 
-          <AddNewUserForm/>
-        </>
+          <AddNewUserPage/>
+            <AddNewCommentPage/>
+        </div>
     );
 };
 

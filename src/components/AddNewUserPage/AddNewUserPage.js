@@ -1,8 +1,8 @@
 import React, {useRef} from 'react';
 
-import styles from './AddNewUserForm.module.css'
+import styles from './AddNewUserPage.module.css'
 
-const AddNewUserForm = () => {
+const AddNewUserPage = () => {
 
     const nameRef = useRef('');
     const userNameRef = useRef('');
@@ -53,7 +53,7 @@ const AddNewUserForm = () => {
     }
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form className={styles.Userform} onSubmit={handleSubmit}>
             <h1>Registration form</h1>
             <label>
                 Name:
@@ -125,4 +125,4 @@ const AddNewUserForm = () => {
     )
 }
 
-export {AddNewUserForm};
+export {AddNewUserPage};
