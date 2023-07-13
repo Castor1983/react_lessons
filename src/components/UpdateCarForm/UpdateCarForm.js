@@ -1,5 +1,5 @@
 import React, {useRef} from 'react';
-import styles from "../CreateCarForm/Component.module.css";
+import styles from "../Component.module.css";
 
 const UpdateCarForm = () => {
     const brendRef = useRef('');

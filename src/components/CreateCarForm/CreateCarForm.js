@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Component.module.css'
+import styles from '../Component.module.css'
 import {useRef} from "react";
 const CreateCarForm = () => {
     const brandRef = useRef('');
@@ -31,7 +31,7 @@ const CreateCarForm = () => {
             <label>
                 Car model:
                 <br/>
-                <input type="text" ref={brendRef}/>
+                <input type="text" ref={brandRef}/>
             </label>
             <label>
                 Price:
