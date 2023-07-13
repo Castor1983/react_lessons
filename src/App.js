@@ -1,9 +1,11 @@
+import {AddNewUserPage} from "./components/AddNewUserPage/AddNewUserPage";
+
 const App = () => {
 
     return (
         <>
 
-            App
+            <AddNewUserPage/>
         </>
     );
 };
