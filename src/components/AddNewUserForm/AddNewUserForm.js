@@ -54,6 +54,7 @@ const AddNewUserForm = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
+            <h1>Registration form</h1>
             <label>
                 Name:
                 <br/>
