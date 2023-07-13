@@ -18,7 +18,6 @@ const AddNewUserForm = () => {
     const companyNameRef = useRef('');
     const catchPharseRef = useRef('');
     const bsRef = useRef('');
-    const passwordRef = useRef('');
     const handleSubmit = (event) => {
         event.preventDefault();
 
