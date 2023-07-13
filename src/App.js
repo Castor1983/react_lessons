@@ -1,11 +1,12 @@
-import {AddNewUserPage} from "./components/AddNewUserPage/AddNewUserPage";
+import {AddNewUserForm} from "./components/AddNewUserForm/AddNewUserForm";
+
 
 const App = () => {
 
     return (
         <>
 
-            <AddNewUserPage/>
+          <AddNewUserForm/>
         </>
     );
 };
