@@ -1,10 +1,8 @@
 import React from 'react';
-import styles from './Form.module.scss'
-import { forwardRef } from 'react';
 const AddNewUserForm = ({handleSubmit, emailRef, passwordRef}) => {
     console.log(emailRef, passwordRef);
     return (
-        <form  onSubmit={handleSubmit} autoComplete={'off'}>
+        <form  onSubmit={handleSubmit} >
             <label>
                 Email:
                 <br/>
