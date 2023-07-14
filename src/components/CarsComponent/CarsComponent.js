@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {CarComponent} from "../CarComponent/CarComponent";
 
-const CarsComponent = ({onCreate, setFormValues, setOnUpdate, setOnId}) => {
+const CarsComponent = ({onCreate, setOnUpdate, setOnId}) => {
 const [cars, setCars] = useState([]);
 const [onDelete, setOnDelete] = useState(null   );
 
@@ -16,7 +16,7 @@ useEffect(()=> {
                 key={car.id} car={car}
                 setOnDelete={setOnDelete}
                 setOnUpdate={setOnUpdate}
-                setFormValues={setFormValues}
+
                 setOnId={setOnId}/>)}
         </div>
     );
