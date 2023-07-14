@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../Component.module.css'
 
-const CarComponent = ({car, setOnDelete, setFormValues}) => {
+const CarComponent = ({car, setOnDelete, setOnUpdate}) => {
     const {id, brand, price, year} = car;
     return (<div className={styles.container}>
             <h2>Car info</h2>
@@ -9,7 +9,7 @@ const CarComponent = ({car, setOnDelete, setFormValues}) => {
             <div>brand: {brand}</div>
             <div>price: {price}</div>
             <div>year: {year}</div>
-            <button className={styles.button} onClick={()=> setFormValues()}>Update Car
+            <button className={styles.button} onClick={()=> setOnUpdate(prev=>!prev)}>Update Car
             </button>
             <button className={styles.button} onClick={() => {
                 fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {method: 'DELETE'})

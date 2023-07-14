@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from '../Component.module.css'
 import {useForm} from "react-hook-form";
 
-const CreateCarForm = ({setOnCreate}) => {
+const CreateCarForm = ({setOnCreate, onUpdate}) => {
       const {register,
           handleSubmit,
           setValue,
@@ -28,27 +28,32 @@ const CreateCarForm = ({setOnCreate}) => {
         });}
 
     return (
-    <form className={styles.form} onSubmit={handleSubmit(create)}>
-        <h1>Create new car</h1>
-        <label>
-            Car model:
-            <br/>
-            <input type="text" placeholder={'brand'} {...register('brand')} />
-        </label>
-        <label>
-            Price:
-            <br/>
-            <input type="text" placeholder={'0-1000000'} {...register('price')} />
-        </label>
-        <label>
-            Year:
-            <br/>
-            <input type="text" placeholder={'1990-2023'} {...register('year')} />
-        </label>
+        <div className={styles.wrapper}>
+            { onUpdate &&
+                <form className={styles.form} onSubmit={handleSubmit(create)}>
+                    <h1>Create new car</h1>
+                    <label>
+                        Car model:
+                        <br/>
+                        <input type="text" placeholder={'brand'} {...register('brand')} />
+                    </label>
+                    <label>
+                        Price:
+                        <br/>
+                        <input type="text" placeholder={'0-1000000'} {...register('price')} />
+                    </label>
+                    <label>
+                        Year:
+                        <br/>
+                        <input type="text" placeholder={'1990-2023'} {...register('year')} />
+                    </label>
 
-        <button type='submit'>Create New Car</button>
+                    <button type='submit'>Create New Car</button>
 
-    </form>
+                </form>
+            }
+        </div>
+
 
 
     )
