@@ -1,17 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import {CarComponent} from "../CarComponent/CarComponent";
+import React, {useState} from 'react';
+import {CarsComponent} from "../CarsComponent/CarsComponent";
+import {CreateCarForm} from "../CreateCarForm/CreateCarForm";
+import styles from "../Component.module.css";
 
 const CarsConteiner = () => {
-const [cars, setCars] = useState([]);
-
-useEffect(()=> {
-    fetch('http://owu.linkpc.net/carsAPI/v1/cars')
-        .then((res) => res.json())
-        .then(cars => setCars(cars));
-}, [])
+    const [onCreate, setOnCreate] = useState(null);
     return (
-        <div>
-            {cars.map(car => <CarComponent key={car.id} car={car}/>)}
+        <div className={styles.wrapper}>
+            <CarsComponent onCreate={onCreate}/>
+            <CreateCarForm setOnCreate={setOnCreate}/>
         </div>
     );
 };
