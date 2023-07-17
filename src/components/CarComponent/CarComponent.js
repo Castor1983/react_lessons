@@ -10,9 +10,10 @@ const CarComponent = ({car, setOnDelete, setOnUpdate, setOnId}) => {
             <div>price: {price}</div>
             <div>year: {year}</div>
             <button className={styles.button} onClick={()=> {
-                setOnUpdate(prev=>!prev)
-                setOnId(id)
-            }}>Update Car
+                setOnUpdate(prev => !prev)
+                setOnId({id, brand, price, year})
+            }
+            }>Update Car
             </button>
             <button className={styles.button} onClick={() => {
                 fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {method: 'DELETE'})

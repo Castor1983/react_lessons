@@ -15,9 +15,7 @@ useEffect(()=> {
             {cars.map(car => <CarComponent
                 key={car.id} car={car}
                 setOnDelete={setOnDelete}
-                setOnUpdate={setOnUpdate}
-
-                setOnId={setOnId}/>)}
+                setOnUpdate={setOnUpdate}setOnId={setOnId}/>)}
         </div>
     );
 };

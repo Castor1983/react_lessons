@@ -10,7 +10,7 @@ const CarsConteiner = () => {
     return (
         <div className={styles.wrapper}>
             <CreateCarForm setOnCreate={setOnCreate} onUpdate={onUpdate} onId={onId}/>
-            <CarsComponent onCreate={onCreate} setOnUpdate={setOnUpdate} setOnId={setOnId} />
+            <CarsComponent onCreate={onCreate} setOnUpdate={setOnUpdate} setOnId={setOnId}/>
 
         </div>
     );

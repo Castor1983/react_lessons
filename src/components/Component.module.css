@@ -5,8 +5,8 @@ body {
 .wrapper {
     width: 100vw;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
     margin: 10px;
 }
 .form {
@@ -26,7 +26,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 20%;
     background: linear-gradient(60deg, yellow, lightgreen);
     border: 1px solid black;
     padding: 30px;
@@ -34,8 +34,8 @@ body {
     color: blue;
     margin: 10px;
 }
-button {
-    width: 50%;
+.button {
+    width: 100px;
     background: linear-gradient(to right, darkblue, lightblue);
     color: #fff;
     border: none;
@@ -44,3 +44,11 @@ button {
     padding: 10px;
     margin: 10px;
 }
+.set {width: 10%;
+    background: linear-gradient(to right, darkblue, lightblue);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;}
