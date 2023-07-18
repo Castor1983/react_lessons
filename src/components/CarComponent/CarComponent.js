@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../Component.module.css'
 
-const CarComponent = ({car, setOnDelete, setOnUpdate, setOnId}) => {
+const CarComponent = ({car, setOnDelete, setOnUpdate, setOnCarValues}) => {
     const {id, brand, price, year} = car;
     return (<div className={styles.container}>
             <h2>Car info</h2>
@@ -11,7 +11,7 @@ const CarComponent = ({car, setOnDelete, setOnUpdate, setOnId}) => {
             <div>year: {year}</div>
             <button className={styles.button} onClick={()=> {
                 setOnUpdate(prev => !prev)
-                setOnId({id, brand, price, year})
+                setOnCarValues({id, brand, price, year})
             }
             }>Update Car
             </button>

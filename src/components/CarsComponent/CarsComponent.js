@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {CarComponent} from "../CarComponent/CarComponent";
 
-const CarsComponent = ({onCreate, setOnUpdate, setOnId}) => {
+const CarsComponent = ({onCreate, setOnUpdate, setCarValues}) => {
 const [cars, setCars] = useState([]);
 const [onDelete, setOnDelete] = useState(null   );
 
@@ -15,7 +15,7 @@ useEffect(()=> {
             {cars.map(car => <CarComponent
                 key={car.id} car={car}
                 setOnDelete={setOnDelete}
-                setOnUpdate={setOnUpdate}setOnId={setOnId}/>)}
+                setOnUpdate={setOnUpdate}setCarValues={setCarValues}/>)}
         </div>
     );
 };

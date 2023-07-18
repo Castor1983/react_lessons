@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import styles from '../Component.module.css'
 import {useForm} from "react-hook-form";
 
-const CreateCarForm = ({setOnCreate, onUpdate, onId}) => {
-    const {id, brand, price, year} = onId;
+const CreateCarForm = ({setOnCreate, onUpdate, onCarValues}) => {
+    const {id, brand, price, year} = onCarValues;
       const {register,
           handleSubmit,
           setValue,
