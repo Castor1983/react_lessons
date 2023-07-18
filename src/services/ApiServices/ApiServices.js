@@ -14,6 +14,7 @@ export const CarServices = {
         instance.delete(`${baseUrl}/${id}`)
             .then(() => setOnDelete(prev => !prev))
     },
+
     addCar: (data, setOnCreate) => {
         const {brand, price, year} = data
         instance.post(baseUrl, {
@@ -26,6 +27,7 @@ export const CarServices = {
                 setOnCreate(prev => !prev)
             })
     },
+
     updateCar: (id, data, setOnCreate) => {
         const {brand, price, year} = data
         instance.patch(`${baseUrl}/${id}`, {
