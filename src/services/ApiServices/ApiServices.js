@@ -1,26 +1,26 @@
-export const NewUserService =  {
+import {Endpoints} from "../../api/Endpoints";
+import {baseUrl} from "../../api/Endpoints";
+import axios from "axios";
+
+export const NewUserService = {
     createNewUser: (newUser) => {
-        fetch('https://jsonplaceholder.typicode.com/users', {
-            method: 'POST',
+        axios.post(baseUrl + Endpoints.USERS, {
             body: JSON.stringify(newUser),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         })
-            .then((response) => response.json())
             .then((json) => console.log(json));
     }
 }
 export const NewComment = {
-    createNewComment: (newComment) =>{
-        fetch('https://jsonplaceholder.typicode.com/users', {
-            method: 'POST',
+    createNewComment: (newComment) => {
+        axios.post(baseUrl + Endpoints.USERS, {
             body: JSON.stringify(newComment),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
             }
         })
-            .then((response) => response.json())
             .then((json) => console.log(json));
     }
 }
