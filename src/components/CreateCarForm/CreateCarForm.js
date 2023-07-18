@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import styles from '../Component.module.css'
 import {useForm} from "react-hook-form";
+import {CarsServices} from "../../services/ApiServices/ApiServices";
+
 
 const CreateCarForm = ({setOnCreate, onUpdate, onCarValues}) => {
     const {id, brand, price, year} = onCarValues;
@@ -15,18 +17,10 @@ const CreateCarForm = ({setOnCreate, onUpdate, onCarValues}) => {
       }
 
     const create = (car)=> {
-        fetch('http://owu.linkpc.net/carsAPI/v1/cars', {
-        method: 'POST',
-        body: JSON.stringify(car),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        }
-    })
-        .then((response) => response.json())
-        .then(() => {
-            setOnCreate(prev => !prev)
-            reset()
-        });}
+        CarsServices.CarAdd(car);
+           setOnCreate(prev => !prev);
+        reset()
+       }
     const patch = (car)=> {
         fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {
         method: 'PUT',
