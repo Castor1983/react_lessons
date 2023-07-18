@@ -1,6 +1,6 @@
 import {baseUrl} from "../../api/Endpoints";
 import {Endpoints} from "../../api/Endpoints";
-import axios from 'axios'
+import axios from axios
 export const CarsServices = {
 CarAdd: (car)=> {
     axios.post(baseUrl, {
