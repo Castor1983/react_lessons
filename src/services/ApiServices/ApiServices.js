@@ -7,12 +7,11 @@ const instance = axios.create({
 });
 export const CarServices = {
     getCars: (setCars) => {
-        fetch(baseUrl)
-            .then((res) => res.json())
-            .then(cars => setCars(cars));
+        instance.get(baseUrl)
+            .then(data => setCars(data.data));
     },
     deleteCar: (id, setOnDelete) => {
-        axios.delete(`${baseUrl}/${id}`)
+        instance.delete(`${baseUrl}/${id}`)
             .then(() => setOnDelete(prev => !prev))
     },
     addCar: (data, setOnCreate) => {
