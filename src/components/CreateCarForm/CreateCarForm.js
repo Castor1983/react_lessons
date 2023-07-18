@@ -16,12 +16,12 @@ const CreateCarForm = ({setOnCreate, onUpdate, onCarValues}) => {
         setValue('year', year)
     }
 
-    const create = (car) => {
-        CarServices.addCar(car, setOnCreate)
+    const create = (data) => {
+        CarServices.addCar(data, setOnCreate)
         reset()
     }
-    const patch = (car) => {
-        CarServices.updateCar(id, car)
+    const patch = (data) => {
+        CarServices.updateCar(id, data, setOnCreate)
         reset()
     }
 
