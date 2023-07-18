@@ -1,44 +1,34 @@
-
 import styles from '../Component.module.css'
 import {useForm} from "react-hook-form";
-import {CarsServices} from "../../services/ApiServices/ApiServices";
-
+import {CarServices} from "../../services/ApiServices/ApiServices";
 
 const CreateCarForm = ({setOnCreate, onUpdate, onCarValues}) => {
     const {id, brand, price, year} = onCarValues;
-      const {register,
-          handleSubmit,
-          setValue,
-          reset}=useForm();
-       const setFormValues = () =>{
-          setValue('brand', brand)
-          setValue('price', price)
-          setValue('year', year)
-      }
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        reset
+    } = useForm();
+    const setFormValues = () => {
+        setValue('brand', brand)
+        setValue('price', price)
+        setValue('year', year)
+    }
 
-    const create = (car)=> {
-        CarsServices.CarAdd(car);
-           setOnCreate(prev => !prev);
+    const create = (car) => {
+        CarServices.addCar(car, setOnCreate)
         reset()
-       }
-    const patch = (car)=> {
-        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {
-        method: 'PUT',
-        body: JSON.stringify(car),
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        }
-    })
-        .then((response) => response.json())
-        .then(() => {
-            setOnCreate(prev => !prev)
-            reset()
-        });}
+    }
+    const patch = (car) => {
+        CarServices.updateCar(id, car)
+        reset()
+    }
 
     return (
         <div className={styles.wrapper}>
 
-            { onUpdate ?
+            {onUpdate ?
                 <form className={styles.form} onSubmit={handleSubmit(create)}>
                     <h1>Create new car</h1>
                     <label>
@@ -79,13 +69,12 @@ const CreateCarForm = ({setOnCreate, onUpdate, onCarValues}) => {
                         <input type="text"  {...register('year')} />
                     </label>
 
-                    <button className={styles.button}  type='submit'>Update Car</button>
+                    <button className={styles.button} type='submit'>Update Car</button>
                 </form>
 
             }
-            <button className={styles.set} onClick={()=> setFormValues()}>Set Car</button>
+            <button className={styles.set} onClick={() => setFormValues()}>Set Car</button>
         </div>
-
 
 
     )
