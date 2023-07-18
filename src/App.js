@@ -1,6 +1,6 @@
-import {AddNewUserPage} from "./components/AddNewUserPage/AddNewUserPage";
-import {AddNewCommentPage} from "./components/AddNewCommentPage/AddNewCommentPage";
-import styles from './components/AddNewUserPage/AddNewUserPage.module.css'
+import {AddNewUserForm} from "./components/AddNewUserForm/AddNewUserForm";
+import {AddNewCommentForm} from "./components/AddNewCommentForm/AddNewCommentForm";
+import styles from './components/AddNewUserForm/AddNewUserForm.module.css'
 
 
 const App = () => {
@@ -8,8 +8,8 @@ const App = () => {
     return (
         <div className={styles.wrapper}>
 
-          <AddNewUserPage/>
-            <AddNewCommentPage/>
+          <AddNewUserForm/>
+            <AddNewCommentForm/>
         </div>
     );
 };
