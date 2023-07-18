@@ -1,20 +1,12 @@
-
 import styles from "../AddNewUserForm/AddNewUserForm.module.css";
 import {useForm} from "react-hook-form";
+import {NewComment} from "../../services/ApiServices/ApiServices";
 
 const AddNewCommentForm = () => {
-     const {register,handleSubmit, reset} =useForm()
-   const addNewComment = (newComment) => {
-        fetch('https://jsonplaceholder.typicode.com/users', {
-            method: 'POST',
-            body: JSON.stringify(newComment),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            }
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
-reset()
+    const {register, handleSubmit, reset} = useForm()
+    const addNewComment = (newComment) => {
+        NewComment.createNewComment(newComment)
+        reset()
     }
 
     return (
@@ -23,7 +15,7 @@ reset()
             <label>
                 Id post:
                 <br/>
-                <input type="text" {...register(    'postId')}/>
+                <input type="text" {...register('postId')}/>
             </label>
             <label>
                 Title:

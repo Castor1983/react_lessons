@@ -1,21 +1,13 @@
 import styles from './AddNewUserForm.module.css'
 import {useForm} from "react-hook-form";
+import {NewUserService} from "../../services/ApiServices/ApiServices";
 
 const AddNewUserForm = () => {
     const {register, handleSubmit, reset} = useForm()
 
     const addNewUser = (newUser) => {
-        fetch('https://jsonplaceholder.typicode.com/users', {
-            method: 'POST',
-            body: JSON.stringify(newUser),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            }
-        })
-            .then((response) => response.json())
-            .then((json) => console.log(json));
+        NewUserService.createNewUser(newUser)
         reset()
-
     }
 
     return (
