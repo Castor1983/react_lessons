@@ -1,9 +1,9 @@
-const App = () => {
 
+import {CarContainer} from "./components/CarContainer/CarContainer";
+const App = () => {
     return (
         <>
-
-            App
+            <CarContainer/>
         </>
     );
 };
