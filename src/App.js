@@ -1,9 +1,11 @@
+import {MainPage} from "./components/MainPage/MainPage";
+
 const App = () => {
 
     return (
         <>
 
-            App
+            <MainPage/>
         </>
     );
 };

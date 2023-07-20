@@ -1,0 +1,18 @@
+.todo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    background: linear-gradient(60deg, yellow, lightgreen);
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 15px;
+    color: blue;
+    margin: 10px;
+}
+.todos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
