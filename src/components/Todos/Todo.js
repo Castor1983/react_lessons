@@ -4,7 +4,7 @@ const Todo = ({todo}) => {
     const {userId, id, title, completed} = todo;
     return (
         <div className={styles.todo}>
-            <h3>Todo: {id} </h3>
+            <h3> do: {id} </h3>
             <div> userId: {userId}</div>
             <div> id: {id}</div>
             <div> title: {title}</div>

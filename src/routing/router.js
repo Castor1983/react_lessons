@@ -3,6 +3,7 @@ import {MainPage} from "../components/MainPage/MainPage";
 import {AppLayout} from "../components/AppLayout/AppLayout";
 import {Todos} from "../components/Todos/Todos";
 import {Albums} from "../components/Albums/Albums";
+import {Comments} from "../components/Comments/Comments";
 
 export const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/comments",
-                element: <MainPage/>,
+                element: <Comments/>,
             }]
     },
 
