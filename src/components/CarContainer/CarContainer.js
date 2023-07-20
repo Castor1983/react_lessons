@@ -2,6 +2,7 @@ import React from 'react';
 import {createContext, useState} from "react";
 import {CarForm} from "../CarForm/CarForm"
 import {Cars} from "../Cars/Cars";
+
 const Context = createContext(null);
 const CarContainer = () => {
     const [trigger, setTrigger] = useState(null);
@@ -21,4 +22,4 @@ const CarContainer = () => {
     );
 };
 
-export {CarContainer};
+export {CarContainer, Context};
