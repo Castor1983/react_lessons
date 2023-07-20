@@ -5,12 +5,12 @@ import styles from './Albums.module.css'
 
 const Albums = () => {
     const [albums, setAlbums] = useState([]);
-    useEffect(()=> {
+    useEffect(() => {
         albumsService.getAll().then(value => value.data).then(value => setAlbums(value))
     }, [])
     return (
         <div className={styles.albums}>
-            {albums.map(album=> <Album key={album.id} album={album}/>)}
+            {albums.map(album => <Album key={album.id} album={album}/>)}
         </div>
     );
 };

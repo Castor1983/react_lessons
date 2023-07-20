@@ -2,6 +2,7 @@ import React from 'react';
 import style from './Navbar.module.css'
 import {AppRoutes} from "../../routing/AppRoutes";
 import {Link} from "react-router-dom";
+
 const Navbar = () => {
     const buttons = [
         {
@@ -11,25 +12,25 @@ const Navbar = () => {
         {
             Label: 'Todos',
             route: AppRoutes.TODOS
-                },
+        },
         {
             Label: 'Albums',
             route: AppRoutes.ALBUMS
-                },
+        },
         {
             Label: 'Comments',
             route: AppRoutes.COMMENTS
         },
-]
+    ]
     return (
         <div className={style.navbar}>
-            {buttons.map((btn,idx) =>
+            {buttons.map((btn, idx) =>
                 <button>
                     <Link key={idx} to={btn.route} style={{textDecoration: 'none', color: 'yellow'}}>
                         {btn.Label}
                     </Link>
                 </button>
-                )}
+            )}
         </div>
     );
 };

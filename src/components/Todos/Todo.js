@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './Todos.module.css'
+
 const Todo = ({todo}) => {
     const {userId, id, title, completed} = todo;
     return (

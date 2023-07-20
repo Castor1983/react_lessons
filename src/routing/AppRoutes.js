@@ -3,5 +3,5 @@ export const AppRoutes = {
     TODOS: '/todos',
     ALBUMS: '/albums',
     COMMENTS: '/comments',
-    POSTBYID: '/comments/post/'
+    POSTBYID: '/comments/:postId'
 }

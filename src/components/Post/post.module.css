@@ -1,0 +1,12 @@
+.post {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    background: linear-gradient(60deg, blue, lightgreen);
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 15px;
+    color: yellow;
+    margin: 10px;
+}
