@@ -1,29 +1,37 @@
 import {createBrowserRouter} from "react-router-dom";
-import {MainPage} from "../components/MainPage/MainPage";
 import {AppLayout} from "../components/AppLayout/AppLayout";
 import {Todos} from "../components/Todos/Todos";
 import {Albums} from "../components/Albums/Albums";
 import {Comments} from "../components/Comments/Comments";
+import {AppRoutes} from "./AppRoutes";
+import {App} from "../App";
+import {Post} from "../components/Post/Post";
 
 export const router = createBrowserRouter([
     {
         element: <AppLayout/>,
         errorElement: <h1>Page does not exist</h1>,
         children: [{
-            path: "/",
-            element: <MainPage/>,
+            path: AppRoutes.MAIN,
+            element: <App/>,
         },
             {
-                path: "/todos",
-                element: <Todos/>   ,
+                path: AppRoutes.TODOS,
+                element: <Todos/>,
             },
             {
-                path: "/albums",
+                path: AppRoutes.ALBUMS,
                 element: <Albums/>,
             },
             {
-                path: "/comments",
+                path: AppRoutes.COMMENTS,
                 element: <Comments/>,
+                children: [
+                    {
+                        path: AppRoutes.POSTBYID,
+                        element: <Post/>
+                    }
+                ]
             }]
     },
 

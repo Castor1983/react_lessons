@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './Comments.module.css'
-const Comment = ({comment}) => {
-    const {userId, id, name, email, body} = comment;
+const Comment = ({comment, setPostId}) => {
+    const {postId, id, name, email, body} = comment;
     return (
-        <div className={styles.comment}>
+        <div className={styles.comment} onClick={() => setPostId(postId)}>
             <h3>Comment: {id} </h3>
-            <div> UserId: {userId}</div>
+            <div> PostId: {postId}</div>
             <div> Id: {id}</div>
             <div> Name: {name}</div>
             <div> Email: {email}</div>

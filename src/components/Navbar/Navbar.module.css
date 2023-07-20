@@ -2,10 +2,27 @@ body {
     margin: 0;
 }
 .navbar{
+   display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 50px;
     background: linear-gradient(60deg, yellow, lightgreen);
     border: 1px solid black;
     border-radius: 15px;
-    color: blue;
+
+}
+button {
+    width: 100px;
+    background: linear-gradient(to right, darkblue, lightblue);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px rgb(0, 0, 0);
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+}
+Link {
+    text-decoration: none;
 }

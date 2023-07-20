@@ -6,7 +6,7 @@ const urls = {
     comments: '/comments',
     posts: {
         base: posts,
-        byId: (id) => `${posts}/${id}`
+        byId: (postId) => `${posts}/${postId}`
     }
 }
 
