@@ -2,6 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 import {MainPage} from "../components/MainPage/MainPage";
 import {AppLayout} from "../components/AppLayout/AppLayout";
 import {Todos} from "../components/Todos/Todos";
+import {Albums} from "../components/Albums/Albums";
 
 export const router = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/albums",
-                element: <MainPage/>,
+                element: <Albums/>,
             },
             {
                 path: "/comments",
