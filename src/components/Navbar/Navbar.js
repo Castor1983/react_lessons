@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+
 import style from './Navbar.module.css'
 import {AppRoutes} from "../../routing/AppRoutes";
-import {Link} from "react-router-dom";
 
 const Navbar = () => {
     const buttons = [

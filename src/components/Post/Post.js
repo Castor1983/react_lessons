@@ -1,8 +1,7 @@
-import React from 'react';
-import {useEffect} from "react";
-import {useState} from "react";
-import {postService} from "../../services/postService";
+import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router";
+
+import {postService} from "../../services/postService";
 import styles from './post.module.css'
 
 const Post = () => {

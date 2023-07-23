@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import {Outlet,} from "react-router";
+
 import {commentsService} from "../../services/commentsService";
 import {Comment} from "./Comment";
 import styles from './Comments.module.css'
-import {Outlet,} from "react-router";
 
 
 const Comments = () => {

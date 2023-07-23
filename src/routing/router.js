@@ -1,11 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
-import {AppLayout} from "../components/AppLayout/AppLayout";
-import {Todos} from "../components/Todos/Todos";
-import {Albums} from "../components/Albums/Albums";
-import {Comments} from "../components/Comments/Comments";
+
 import {AppRoutes} from "./AppRoutes";
-import {App} from "../App";
-import {Post} from "../components/Post/Post";
+import {Albums, AppLayout, Comments, MainPage, Post, Todos} from "../components";
 
 export const router = createBrowserRouter([
     {
@@ -13,7 +9,7 @@ export const router = createBrowserRouter([
         errorElement: <h1>Page does not exist</h1>,
         children: [{
             path: AppRoutes.MAIN,
-            element: <App/>,
+            element: <MainPage/>,
         },
             {
                 path: AppRoutes.TODOS,
