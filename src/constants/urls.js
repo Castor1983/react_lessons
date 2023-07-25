@@ -1,17 +1,15 @@
-const movieBaseURL = 'https://api.themoviedb.org/3';
-const genreBaseURL = 'https://api.themoviedb.org/3/genre/movie/list';
-const imageBaseURL = 'https://image.tmdb.org/t/p/w500';
-
-const apiKey = '?api_key=99ccb4256a47dbd8636cab59076eb9ca';
-
+const baseURL = 'https://api.themoviedb.org/3';
+const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5OWNjYjQyNTZhNDdkYmQ4NjM2Y2FiNTkwNzZlYjljYSIsInN1YiI6IjY0YmVhZWQ3ZTlkYTY5MDBlY2ViMWQwMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.eUovTjLiNTyX_Na-LMqLl0gWsksfTARfi5Dzb7LFaLM';
+const movieList = '/discover/movie';
+const pageNumber = '?page=2';
 const urls = {
-    movieList: '/discover/movie',
+    movieList: () => `${movieList}${pageNumber}`
+
 
 }
+
 export {
-    movieBaseURL,
-    genreBaseURL,
-    imageBaseURL,
-    apiKey,
+    baseURL,
+    token,
     urls
 }

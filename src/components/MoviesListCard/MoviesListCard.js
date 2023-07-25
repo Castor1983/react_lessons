@@ -1,9 +1,10 @@
 import React from 'react';
 
-const MoviesListCard = () => {
+const MoviesListCard = ({movie}) => {
+    const {original_title} = movie;
     return (
         <div>
-            MoviesListCard
+            <div> Title: {original_title}</div>
         </div>
     );
 };
