@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import {posterService} from "../../services/posterService";
+import {posterURL} from "../../constants/urls";
 
-const PosterPreview = () => {
+const PosterPreview = ({poster_path}) => {
     return (
         <div>
-            PosterPreview
+<img src={`${posterURL}${poster_path}`}/>
         </div>
     );
 };
