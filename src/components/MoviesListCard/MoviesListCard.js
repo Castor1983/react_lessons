@@ -8,8 +8,7 @@ const MoviesListCard = ({movie}) => {
     return (
         <div className={css.MoviesListCard}>
             <PosterPreview poster_path ={poster_path}/>
-            <div> Title: {original_title}</div>
-            <div> release_date: {release_date}</div>
+            <h2>{original_title}</h2>
         </div>
     );
 };
