@@ -4,13 +4,22 @@ import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
 import {moviesListService} from "../../services/moviesListService";
 
 const MoviesList = () => {
-    const [movies, setMovies] = useState(null)
+    const [movies, setMovies] = useState([])
     useEffect( ()=> {
-        moviesListService.getAll().then(({data})=> console.log(data))
-    }, []);
+        moviesListService.getAll().then(({data})=>{
+            for (const dataKey in data) {
+                if (dataKey === 'results'){
+                    setMovies(data[dataKey])
+                }
+            }
+        })
+            }, []);
+
     return (
         <div>
-           dsdsfa
+
+            {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+
         </div>
     );
 };
