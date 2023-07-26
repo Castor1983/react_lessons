@@ -1,0 +1,9 @@
+
+.star_rating {
+    display: flex;
+
+}
+
+.star:hover {
+    cursor: pointer;
+}
