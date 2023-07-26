@@ -7,7 +7,7 @@ function StarRatingLabel() {
 
     return (
         <div>
-            <h4>Rating</h4>
+            {/*<h4 style={{color: 'blue'}}>Rating</h4>*/}
             {/*{labelText(rating)}*/}
         </div>
     );

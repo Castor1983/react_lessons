@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import StarRatingLabel from "./starcomponent/StarRatingLabel";
 import StarsList from "./starcomponent/StarsList";
-
+import css from './StarsRating.module.css'
 export const StarRatingContext = createContext();
 export default function StarRating({
                                        defaultState,
@@ -35,7 +35,7 @@ export default function StarRating({
     }
 
     return (
-        <>
+        <div className={css.StarRating}>
             <StarRatingContext.Provider
                 value={{
                     emptyColor,
@@ -55,7 +55,7 @@ export default function StarRating({
                     <StarsList />
                 </>
             </StarRatingContext.Provider>
-        </>
+        </div>
     );
 }
 
@@ -73,12 +73,12 @@ StarRating.propTypes = {
 };
 
 StarRating.defaultProps = {
-    defaultState: 0,
-    emptyColor: "grey",
-    fillColor: "#edaa10",
+    defaultState: 1.6,
+    emptyColor: "white",
+    fillColor: "gold",
     height: 30,
     labelText: (value) => `Rating is: ${value}`,
-    maxValue: 5,
+    maxValue: 10,
     onChangeHover: () => {},
     onChangeValue: () => {},
     readOnly: false,
