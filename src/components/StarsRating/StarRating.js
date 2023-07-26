@@ -73,7 +73,7 @@ StarRating.propTypes = {
 };
 
 StarRating.defaultProps = {
-    defaultState: 1.6,
+    defaultState: 0,
     emptyColor: "white",
     fillColor: "gold",
     height: 20,
