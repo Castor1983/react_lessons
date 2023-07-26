@@ -76,11 +76,11 @@ StarRating.defaultProps = {
     defaultState: 1.6,
     emptyColor: "white",
     fillColor: "gold",
-    height: 30,
+    height: 20,
     labelText: (value) => `Rating is: ${value}`,
     maxValue: 10,
     onChangeHover: () => {},
     onChangeValue: () => {},
     readOnly: false,
-    width: 30,
+    width: 20,
 };

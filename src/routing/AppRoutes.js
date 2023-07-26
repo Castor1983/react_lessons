@@ -1,7 +1,5 @@
 export const AppRoutes = {
-    MAIN: '/',
-    TODOS: '/todos',
-    ALBUMS: '/albums',
-    COMMENTS: '/comments',
-    POSTBYID: '/comments/:postId'
+    MAIN: '',
+    MOVIESPAGE: 'movieslist',
+    MOVIEINFO: '/movieinfo/:id',
 }
