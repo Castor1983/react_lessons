@@ -14,7 +14,6 @@ const MoviesList = () => {
             }
         })
             }, []);
-
     return (
         <div className={css.MoviesList}>
 

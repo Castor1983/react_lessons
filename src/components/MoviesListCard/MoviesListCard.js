@@ -6,7 +6,7 @@ import {GenreBadge} from "../GenreBadge/GenreBadge";
 import {useNavigate} from "react-router-dom";
 const MoviesListCard = ({movie}) => {
     const navigate = useNavigate()
-    const {title, poster_path, id} = movie;
+    const {poster_path, id} = movie;
     return (
         <div className={css.MoviesListCard} onClick={()=>navigate(`/movieinfo/${id}`)}>
             <PosterPreview poster_path ={poster_path}/>
