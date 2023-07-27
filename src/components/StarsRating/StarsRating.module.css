@@ -1,13 +1,27 @@
 button {
 
     background-color: transparent;
-    border: none;
+    width: 50px;
+    border-radius: 50%;
+    background-color: whitesmoke;;
+    margin: 3px;
     outline: none;
     cursor: pointer;
 }
+
 .on {
     color: #ccc;
 }
 .off {
     color: #ccc;
+}
+button a {
+    text-decoration: none;
+    color: blue;
+}
+
+button a[class='active'] {
+    color: red;
+} {
+
 }
