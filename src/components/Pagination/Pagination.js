@@ -1,5 +1,6 @@
 import React from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
+import css from './Pagination.module.css'
 
 const Pagination = ({totalPages,setNumberPage }) => {
     const navigate = useNavigate()
@@ -8,7 +9,7 @@ const Pagination = ({totalPages,setNumberPage }) => {
         ArrTotalPages.push(i)
     }*/
     return (
-        <div>
+        <div className={css.Pagination}>
             {[...Array(15)].map((button,number) => {
                 number += 1
 
