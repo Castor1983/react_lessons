@@ -1,0 +1,22 @@
+.MovieDetails {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.title {
+    text-align: center;
+    color:rgba(0,0,255,0.6);
+}
+.img {
+    border-radius: 20px;
+    width: 70%;
+    height: 80%;
+}
+.textInfo {
+font-size:xx-large;
+    color: darkblue;
+    padding: 15px;
+    border: blue solid 1px;
+    border-radius: 10px;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
 
-const GenreBadge = () => {
+const GenreBadge = ({genre}) => {
+    const {name} = genre
     return (
         <div>
-            GenreBadge
+            <div>{name}</div>
         </div>
     );
 };
