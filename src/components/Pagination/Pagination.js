@@ -1,7 +1,8 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const Pagination = ({totalPages,setNumberPage }) => {
+    const navigate = useNavigate()
     /*const ArrTotalPages = [];
     for (let i = 1; i <= 15; i++) {
         ArrTotalPages.push(i)
@@ -12,7 +13,10 @@ const Pagination = ({totalPages,setNumberPage }) => {
                 number += 1
 
             return (
-               <button key={number}>
+               <button key={number} onClick={()=> {
+                   navigate(`/movieslist/page/${number}`)
+                   setNumberPage(number)
+               } }>
                    <NavLink to={`/movieslist/page/${number}`} onClick={()=> setNumberPage(number)}>
                        {number}
                    </NavLink>
