@@ -1,86 +1,28 @@
-import React, {useState, createContext} from "react";
-import PropTypes from "prop-types";
-
-import StarRatingLabel from "./starcomponent/StarRatingLabel";
-import StarsList from "./starcomponent/StarsList";
+import React, {useState} from 'react';
 import css from './StarsRating.module.css'
-export const StarRatingContext = createContext();
-export default function StarRating({
-                                       defaultState,
-                                       emptyColor,
-                                       fillColor,
-                                       height,
-                                       labelText,
-                                       maxValue,
-                                       onChangeHover,
-                                       onChangeValue,
-                                       readOnly,
-                                       width,
-                                   }) {
-    const [rating, setRating] = useState(defaultState);
-    const [hover, setHover] = useState(null);
+const StarRating = (vote_average) => {
 
-    const setRatingFn = (value) => {
-        if (readOnly) return;
-
-        setRating(value);
-        onChangeValue(value);
-    }
-
-    const setHoverFn = (value) => {
-        if (readOnly) return;
-
-        setHover(value);
-        onChangeHover(value);
-    }
-
+    const [rating, setRating] = useState(0);
+        const [hover, setHover] = useState(0);
     return (
-        <div className={css.StarRating}>
-            <StarRatingContext.Provider
-                value={{
-                    emptyColor,
-                    fillColor,
-                    height,
-                    hover,
-                    labelText,
-                    rating,
-                    setHover: setHoverFn,
-                    setRating: setRatingFn,
-                    width,
-                    maxValue,
-                }}
-            >
-                <>
-                    <StarRatingLabel />
-                    <StarsList />
-                </>
-            </StarRatingContext.Provider>
+        <div className="star-rating">
+            {[...Array(10)].map((star, index) => {
+                index += 1;
+                return (
+                    <button
+                        type="button"
+                        key={index}
+                        className={index <= (hover || rating) ? "css.on" : "css.off"}
+                        onClick={() => setRating(vote_average)}
+                        onMouseEnter={() => setHover(vote_average)}
+                        onMouseLeave={() => setHover(rating)}
+                    >
+                        <span className="star">&#9733;</span>
+                    </button>
+                );
+            })}
         </div>
     );
-}
-
-StarRating.propTypes = {
-    defaultState: PropTypes.number,
-    emptyColor: PropTypes.string,
-    fillColor: PropTypes.string,
-    height: PropTypes.number,
-    labelText: PropTypes.func,
-    maxValue: PropTypes.number,
-    onChangeHover: PropTypes.func,
-    onChangeValue: PropTypes.func,
-    readOnly: PropTypes.bool,
-    width: PropTypes.number,
 };
 
-StarRating.defaultProps = {
-    defaultState: 0,
-    emptyColor: "white",
-    fillColor: "gold",
-    height: 20,
-    labelText: (value) => `Rating is: ${value}`,
-    maxValue: 10,
-    onChangeHover: () => {},
-    onChangeValue: () => {},
-    readOnly: false,
-    width: 20,
-};
+export {StarRating};

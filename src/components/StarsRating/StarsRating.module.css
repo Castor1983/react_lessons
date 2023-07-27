@@ -1,15 +1,13 @@
+button {
 
-.star_rating {
-    display: flex;
-
-}
-
-.star:hover {
+    background-color: transparent;
+    border: none;
+    outline: none;
     cursor: pointer;
 }
-.StarRating {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: end;
+.on {
+    color: #ccc;
+}
+.off {
+    color: #ccc;
 }
