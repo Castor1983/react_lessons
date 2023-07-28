@@ -2,7 +2,10 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+
+
 }
 .title {
     text-align: center;
@@ -10,13 +13,14 @@
 }
 .img {
     border-radius: 20px;
-    width: 70%;
-    height: 80%;
+    width: 830px;
+
 }
 .textInfo {
 font-size:xx-large;
-    color: darkblue;
+    color: white;
     padding: 15px;
-    border: blue solid 1px;
     border-radius: 10px;
+    background-color: rgba(0, 0, 1, 0.6);
+    width: 800px;
 }

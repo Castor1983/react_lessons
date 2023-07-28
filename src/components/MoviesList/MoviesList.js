@@ -15,7 +15,9 @@ const MoviesList = () => {
 
     return (
         <div className={css.MoviesList}>
+            <button className={css.prevNext}>prev</button>
             <Pagination setNumberPage={setNumberPage} />
+            <button className={css.prevNext}>next</button>
             {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
 
         </div>

@@ -9,30 +9,26 @@ const Pagination = ({totalPages,setNumberPage }) => {
         ArrTotalPages.push(i)
     }*/
     return (
-        <div className={css.Pagination}>
-            {[...Array(30)].map((button,number) => {
-                number += 1
+                <div className={css.Pagination}>
+                    {[...Array(10)].map((button,number) => {
+                        number += 1
 
-            return (
-                <>
-
-                    <button key={number} onClick={()=> {
-                        navigate(`/movieslist/page/${number}`)
-                        setNumberPage(number)
-                    } }>
-                        <NavLink to={`/movieslist/page/${number}`} onClick={()=> setNumberPage(number)}>
-                            {number}
-                        </NavLink>
-                    </button>
-
-                </>
+                        return (
 
 
-            );
-            })}
+                                <button key={number} onClick={()=> {
+                                    navigate(`/movieslist/page/${number}`)
+                                    setNumberPage(number)
+                                } }>
+                                    <NavLink  to={`/movieslist/page/${number}`} onClick={()=> setNumberPage(number)}>
+                                        {number}
+                                    </NavLink>
+                                </button>
+                        );
+                    })}
 
-        </div>
-    );
-};
+                </div>
+
+                )};
 
 export {Pagination};

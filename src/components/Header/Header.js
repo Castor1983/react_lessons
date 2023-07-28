@@ -11,15 +11,8 @@ const Header = () => {
         {
             Label: 'Movies',
             route: AppRoutes.MOVIESLIST
-        },
-        {
-            Label: 'Genres',
-            route: AppRoutes.ALBUMS
-        },
-        {
-            Label: 'Comments',
-            route: AppRoutes.COMMENTS
-        },
+        }
+
     ]
     return (
         <div className={css.Header}>

@@ -1,27 +1,25 @@
 button {
-
-    background-color: transparent;
-    width: 50px;
+    width: 70px;
     border-radius: 50%;
-    background-color: whitesmoke;;
-    margin: 3px;
+    background-color: rgba(0,0,255,0.4);
+    margin: 7px;
     outline: none;
     cursor: pointer;
 }
 
-.on {
-    color: #ccc;
-}
-.off {
-    color: #ccc;
-}
 button a {
     text-decoration: none;
-    color: blue;
+    color: white;
 }
 
 button a[class='active'] {
-    color: red;
-} {
+    color: gold;
+}
 
+.star {
+    color: gold;
+    font-size: xx-large;
+}
+.star_rating {
+    color: white;
 }

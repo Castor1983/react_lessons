@@ -3,5 +3,17 @@ display: grid;
      grid-template-rows: 50px 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(5, 1fr);
     margin-top: 10px;
+    justify-items: center;
+    align-items: center;
 
+}
+.prevNext {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0,0,255,0.4);
+    margin: 7px;
+    outline: none;
+    cursor: pointer;
+    color: white;
 }

@@ -1,4 +1,8 @@
 .GenresBadges {
-    color: rgba(0,0,255,0.8);
+    color: white;
     font-size:larger;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 5px;
+    flex-direction: column;
 }

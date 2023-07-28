@@ -3,7 +3,7 @@ import {posterURL} from "../../constants/urls";
 import css from './MovieDetails.module.css'
 const MovieDetails = ({movie}) => {
     const{
-         title, backdrop_path, budget, genres, homepage,
+         title, backdrop_path, budget, genres,
         original_language, original_title, overview,
         popularity, production_companies, production_countries, release_date,
         revenue, runtime, status, tagline, vote_average, vote_count} = movie;
@@ -16,20 +16,19 @@ const MovieDetails = ({movie}) => {
             <div className={css.textInfo}>
                 <div>Overview: {overview}</div>
                 <div>Budget: {budget}$</div>
-                {/*<div>{genres}</div>*/}
-                <div>Homepege: {homepage}</div>
-                <div>{original_language}</div>
+                <div> Genres: {genres?.map(genre=>(<div key={genre.id}>{genre.name}</div>))}</div>
+                <div>Original language: {original_language}</div>
                 <div>Original title: {original_title}</div>
-                <div>{popularity}</div>
+                <div>Popularity: {popularity}</div>
                 {/*<div>{production_companies}</div>*/}
                 {/*<div>{production_countries}</div>*/}
-                <div>{release_date}</div>
-                <div>{revenue}</div>
-                <div>{runtime}</div>
-                <div>{status}</div>
-                <div>{tagline}</div>
-                <div>{vote_average}</div>
-                <div>{vote_count}</div>
+                <div>Relise date: {release_date}</div>
+                <div>Revenue: {revenue}$</div>
+                <div>Runtime: Runtime: {runtime} min.</div>
+                <div>Status: {status}</div>
+                <div>Tagline: {tagline}</div>
+                <div>Vote average: {vote_average}</div>
+                <div>Vote count: {vote_count}</div>
             </div>
 
         </div>
