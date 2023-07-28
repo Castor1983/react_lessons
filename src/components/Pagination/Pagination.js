@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
 import css from './Pagination.module.css'
 
-const Pagination = ({totalPages,setNumberPage }) => {
+const Pagination = ({setNumberPage }) => {
     const navigate = useNavigate()
     /*const ArrTotalPages = [];
     for (let i = 1; i <= 15; i++) {
