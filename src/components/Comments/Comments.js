@@ -13,12 +13,11 @@ class Comments extends Component {
         }
     }
     componentDidMount()
-     {
+    {
         commentsService.getAll().then(({data}) => this.setState({comments: data}))
     }
 
     render() {
-        console.log(this.state.comments)
         return (
             <div className={styles.comments}>
                 {this.state.comments.map( comment => <Comment key={comment.id} comment={comment}/>)    }

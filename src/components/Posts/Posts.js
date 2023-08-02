@@ -19,7 +19,6 @@ class Posts extends Component {
     }
 
     render() {
-        console.log(this.state.posts)
         return (
             <div className={styles.posts}>
 
