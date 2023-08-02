@@ -1,7 +1,6 @@
 export const AppRoutes = {
     MAIN: '/',
-    TODOS: '/todos',
-    ALBUMS: '/albums',
+    CARS: '/cars',
     COMMENTS: '/comments',
-    POSTBYID: '/comments/:postId'
+    POSTS: '/posts'
 }

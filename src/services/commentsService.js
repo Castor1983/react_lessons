@@ -1,8 +1,8 @@
-import {apiService} from "./apiService";
+import {apiPlaceHolderService} from "./apiService";
 import {urls} from "../constants/urls";
 
 const commentsService = {
-    getAll: () => apiService.get(urls.comments),
+    getAll: () => apiPlaceHolderService.get(urls.comments),
 }
 
 export {commentsService}

@@ -1,27 +1,32 @@
-import React, {useEffect, useState} from 'react';
-import {Outlet,} from "react-router";
-
+import React, {Component} from 'react';
 import {commentsService} from "../../services/commentsService";
 import {Comment} from "./Comment";
 import styles from './Comments.module.css'
 
 
-const Comments = () => {
-    const [comments, setComments] = useState([]);
+// eslint-disable-next-line no-undef
+class Comments extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            comments: []
+        }
+    }
+    componentDidMount()
+    {
+        commentsService.getAll().then(({data}) => this.setState({comments: data}))
+    }
 
+    render() {
+        console.log(this.state.comments)
+        return (
+            <div className={styles.comments}>
+                {this.state.comments.map( comment => <Comment key={comment.id} comment={comment}/>)    }
+            </div>
 
-    useEffect(() => {
-        commentsService.getAll().then(value => value.data).then(value => setComments(value))
-    }, [])
+        );
+    }
+}
 
-
-    return (
-        <div className={styles.comments}>
-            <Outlet/>
-            {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
-
-        </div>
-    );
-};
 
 export {Comments};

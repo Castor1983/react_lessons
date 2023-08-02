@@ -1,7 +1,10 @@
 import {createBrowserRouter} from "react-router-dom";
 
 import {AppRoutes} from "./AppRoutes";
-import {Albums, AppLayout, Comments, MainPage, Post, Todos} from "../components";
+import {AppLayout, MainPage} from "../components";
+import CarsPage from "../pages/CarsPage";
+import PostsPage from "../pages/PostsPage";
+import CommentsPage from "../pages/CommentsPage";
 
 export const router = createBrowserRouter([
     {
@@ -12,22 +15,17 @@ export const router = createBrowserRouter([
             element: <MainPage/>,
         },
             {
-                path: AppRoutes.TODOS,
-                element: <Todos/>,
+                path: AppRoutes.CARS,
+                element: <CarsPage/>,
             },
             {
-                path: AppRoutes.ALBUMS,
-                element: <Albums/>,
+                path: AppRoutes.POSTS,
+                element: <PostsPage/>,
             },
             {
                 path: AppRoutes.COMMENTS,
-                element: <Comments/>,
-                children: [
-                    {
-                        path: AppRoutes.POSTBYID,
-                        element: <Post/>
-                    }
-                ]
+                element: <CommentsPage/>,
+
             }]
     },
 
