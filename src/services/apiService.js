@@ -1,7 +1,7 @@
 import axios from "axios";
-import {baseURL} from "../constants/urls";
+import {baseURL, token} from "../constants/urls";
 
-const apiMoviesService = axios.create({baseURL});
-const
+const apiMoviesService = axios.create({baseURL, headers: {'Authorization': `Bearer ${token}`}});
+const apiGenresService = axios.create({baseURL})
 
-export {apiMoviesService}
+export {apiMoviesService, apiGenresService}
