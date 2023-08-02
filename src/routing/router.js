@@ -1,6 +1,6 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 import {NotFoundPage} from "../pages/NotFoundPage/NotFoundPage";
-import {MainLayout} from "../Layouts/MainLayout/MainLayout";
+import {MainLayout} from "../layouts/MainLayout/MainLayout";
 import {MoviesPage} from "../pages/MoviesPage/MoviesPage";
 import {MovieInfo} from "../components/MovieInfo/MovieInfo";
 import {AppRoutes} from "./AppRoutes";
