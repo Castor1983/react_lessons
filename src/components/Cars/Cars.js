@@ -18,7 +18,7 @@ class Cars extends Component {
 
         return (
 
-            <div className={styles.albums}>
+            <div className={styles.cars}>
                 {this.state.cars.map(car => <Car key={car.id} car={car}/>)}
             </div>
         );

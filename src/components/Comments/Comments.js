@@ -13,7 +13,7 @@ class Comments extends Component {
         }
     }
     componentDidMount()
-    {
+     {
         commentsService.getAll().then(({data}) => this.setState({comments: data}))
     }
 

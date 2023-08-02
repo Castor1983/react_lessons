@@ -1,4 +1,4 @@
-.album {
+.car {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -10,7 +10,7 @@
     color: blue;
     margin: 10px;
 }
-.albums {
+.cars {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
