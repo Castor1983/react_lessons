@@ -1,5 +1,3 @@
-
-
 import styles from './Cars.module.css'
 import React, {Component} from 'react';
 

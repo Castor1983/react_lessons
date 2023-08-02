@@ -1,8 +1,8 @@
-
 import {Car} from "./Car";
 import styles from './Cars.module.css'
 import React, {Component} from 'react';
 import {carsService} from "../../services/carsService";
+
 class Cars extends Component {
     constructor(props) {
         super(props);
@@ -10,6 +10,7 @@ class Cars extends Component {
             cars: []
         }
     }
+
     componentDidMount() {
         carsService.getAll().then(({data}) => this.setState({cars: data}))
     }
@@ -24,8 +25,6 @@ class Cars extends Component {
         );
     }
 }
-
-
 
 
 export {Cars};

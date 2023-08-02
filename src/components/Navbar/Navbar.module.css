@@ -1,8 +1,9 @@
 body {
     margin: 0;
 }
-.navbar{
-   display: flex;
+
+.navbar {
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 100%;
@@ -12,6 +13,7 @@ body {
     border-radius: 15px;
 
 }
+
 button {
     width: 100px;
     background: linear-gradient(to right, darkblue, lightblue);
@@ -23,6 +25,7 @@ button {
     margin: 10px;
     text-decoration: none;
 }
+
 Link {
     text-decoration: none;
 }

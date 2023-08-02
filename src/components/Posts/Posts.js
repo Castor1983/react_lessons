@@ -12,8 +12,8 @@ class Posts extends Component {
             posts: []
         }
     }
-    componentDidMount()
-     {
+
+    componentDidMount() {
         postsService.getAll().then(({data}) => this.setState({posts: data}))
     }
 
@@ -21,7 +21,7 @@ class Posts extends Component {
         return (
             <div className={styles.posts}>
 
-                {this.state.posts.map( post => <Post key={post.id} post={post}/>)    }
+                {this.state.posts.map(post => <Post key={post.id} post={post}/>)}
             </div>
 
         );
