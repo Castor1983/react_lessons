@@ -1,7 +1,7 @@
-import {ApiService} from "./ApiService";
+import {apiMoviesService} from "./apiService";
 import {urls} from "../constants/urls";
 
 const moviesInfoService = {
-    getAll: (id)=> ApiService.get(urls.movie.byId(id ))
+    getAll: (id)=> apiMoviesService.get(urls.movie.byId(id ))
 }
 export {moviesInfoService}
