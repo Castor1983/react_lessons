@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {commentsService} from "../../services/commentsService";
 import {Post} from "./Post";
 import styles from './Posts.module.css'
 import {postsService} from "../../services/postsService";
