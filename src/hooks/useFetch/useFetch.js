@@ -1,12 +1,11 @@
-import {useEffect, useState} from "react";
+import {useEffect} from "react";
 
 function useFetch (endpoint) {
-    const [data, setData] = useState([])
     useEffect(()=> {
         fetch(`https://jsonplaceholder.typicode.com${endpoint}`)
             .then(resp => resp.json())
-            .then(json => setData(json))
+            .then(json => console.log(json))
     }, [endpoint])
-    return console.log(data)
+    return null
 }
 export {useFetch}
