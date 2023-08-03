@@ -5,14 +5,14 @@ const App = () => {
     const [data, setData] = useState(0);
 
 
-    const changeCount = (type) => {
+    const changeNum = (type) => {
         setData(type === 'decrement' ? data - 1 : data + 1)
     };
     console.log('App Render')
     return (
         <>
 
-            <TestUseMemo data={data} changeCount={changeCount}/>
+            <TestUseMemo data={data} changeNum={changeNum}/>
 
         </>
     );

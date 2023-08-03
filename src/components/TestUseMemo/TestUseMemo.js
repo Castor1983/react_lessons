@@ -1,6 +1,6 @@
 import React, {memo, useCallback, useMemo, useState,} from 'react';
 
-const TestUseMemo = ({data, changeCount}) => {
+const TestUseMemo = ({data, changeNum}) => {
     const [todos, setTodos] = useState([]);
     const addTodo = useCallback(() => setTodos([...todos, "Todo"]), [todos])
 
@@ -18,8 +18,8 @@ const TestUseMemo = ({data, changeCount}) => {
     console.log('TestUseMemo render')
     return (
         <div>
-            <button onClick={()=>changeCount('increment')}>Plus</button>
-            <button onClick={()=>changeCount('decrement')}>Minus</button>
+            <button onClick={()=>changeNum('increment')}>Plus</button>
+            <button onClick={()=>changeNum('decrement')}>Minus</button>
             <p>Number: {data}</p>
             <p>Calculation: {calculation}</p>
             {todos.map((todo, idx) => <p key={idx}>{todo}</p>)}
