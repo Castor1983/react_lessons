@@ -1,13 +1,20 @@
-import {users} from "../../usersArray/usersArray";
+import {useState} from "react";
+
 
 const useArray = (defaultValue) => {
+   const [value, setValue] = useState(defaultValue);
 
-   if (typeof defaultValue === 'object') {
-       users.push(defaultValue)
-   } else if (typeof defaultValue === 'number') {
-      users.filter((user)=>user.id !== defaultValue)
-   }
-   return users
+   const add = item => {
+      setValue(prevValue => [...prevValue, item]);
+   };
+
+   const remove = id => {
+      setValue(prevValue => prevValue.filter((_, i) => i !== id));
+   };
+
+   const isEmpty = () => value.length === 0;
+
+   return { value, setValue, add, remove, isEmpty };
 
 }
 export {useArray}
