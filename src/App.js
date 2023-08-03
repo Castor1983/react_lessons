@@ -1,9 +1,13 @@
+import {useFetch} from "./hooks/useFetch/useFetch";
+
 const App = () => {
 
     return (
         <>
 
-            App
+            {useFetch('/users')}
+            {useFetch('/posts')}
+            {useFetch('/comments')}
         </>
     );
 };
