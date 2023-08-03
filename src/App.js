@@ -28,7 +28,7 @@ const App = () => {
                     {names.value.map((name, id) => (
                         <div key={id}>
                             <button onClick={() => names.remove(id)}>
-                                delete
+                                remove
                             </button>
                             {name}
                         </div>
