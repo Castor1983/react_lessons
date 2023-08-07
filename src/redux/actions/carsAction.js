@@ -1,7 +1,9 @@
 const carsActionsTypes = {
-    SET_CARS: 'SET_CARS'
+    SET_CARS: 'SET_CARS',
+    TRIGGER: 'TRIGGER'
 }
-const carsActionS = {
-    setCars: (cars) => ({type: carsActionsTypes.SET_CARS, payload: cars})
+const carsActions = {
+    setCars: (cars) => ({type: carsActionsTypes.SET_CARS, payload: cars}),
+    setTrigger: (trigger) => ({type: carsActionsTypes.TRIGGER, payload: !trigger})
 }
-export {carsActionS, carsActionsTypes}
+export {carsActions, carsActionsTypes}

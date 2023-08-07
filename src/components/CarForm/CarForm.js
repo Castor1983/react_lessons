@@ -3,10 +3,12 @@ import {useForm} from "react-hook-form";
 import {carService} from "../../services/carService";
 import {Context} from "../CarContainer/CarContainer";
 import styles from '../Car.module.css'
+import {useDispatch, useSelector} from "react-redux";
+import {carsActions} from "../../redux/actions/carsAction";
 
 const CarForm = () => {
     const [errors, setErrors] = useState(null);
-    const {setTrigger, carForUpdate, setCarForUpdate} = useContext(Context)
+    const { carForUpdate, setCarForUpdate} = useContext(Context)
     const {
         register,
         handleSubmit, setValue,
@@ -18,13 +20,14 @@ const CarForm = () => {
         setValue('price', carForUpdate.price)
         setValue('year', carForUpdate.year)
     }
-
+    const triggerr = useSelector((store)=> store.cars.trigger)
+const dispatch = useDispatch()
     const save = async (car) => {
         try {
             await carService.create(car);
             setErrors(null);
             reset();
-            setTrigger()
+            dispatch(carsActions.setTrigger(triggerr));
         } catch (e) {
             setErrors(e.response.data)
         }
@@ -35,7 +38,7 @@ const CarForm = () => {
            await carService.updateById(carForUpdate.id, car)
            setErrors(null);
            setCarForUpdate();
-           setTrigger();
+           dispatch(carsActions.setTrigger());
            reset();
        }catch (e) {
            setErrors(e.response.data)
