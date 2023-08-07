@@ -1,14 +1,16 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {carService} from "../../services/carService";
 import {Car} from "../Car/Car";
-import {Context} from "../CarContainer/CarContainer";
+
+import {useDispatch, useSelector} from "react-redux";
+import {carsActionS} from "../../redux/actions/carsAction";
 
 const Cars = () => {
-    const [cars, setCars] = useState([]);
-    const {trigger} = useContext(Context);
+    const cars = useSelector((store)=> store.cars.cars)
+    const dispatch = useDispatch()
     useEffect(() => {
-        carService.getAll().then(value=> value.data).then(value => setCars(value))
-    }, [trigger])
+        carService.getAll(dispatch).then(value=> value.data).then(value =>dispatch (carsActionS.setCars(value)))
+    }, [])
     return (
         <div>
             {cars.map(car => <Car key={car.id} car={car}/>)}
