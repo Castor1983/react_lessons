@@ -9,7 +9,7 @@ const Car = ({car}) => {
     const {setCarForUpdate} = useContext(Context);
 const dispatch = useDispatch()
     const deleteCar = async (id)=> {
-await dispatch(deleteCarThunk(id));
+await dispatch(deleteCarThunk(car.id));
     }
     return (
         <div className={styles.container}>
