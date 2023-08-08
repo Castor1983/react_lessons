@@ -41,9 +41,9 @@ const dispatch = useDispatch()
     return (
         <div>
             <form  className={styles.form} onSubmit={handleSubmit(!carForUpdate? save: update)}>
-                <label> brand: <input type='text' placeholder={'brand'} {...register('brand')}/> </label>
-                <label> price: <input type='text' placeholder={'price'} {...register('price')}/> </label>
-                <label> year: <input type='text' placeholder={'year'} {...register('year')}/> </label>
+                <label> brand: <input type='text' required={true} placeholder={'brand'} {...register('brand')}/> </label>
+                <label> price: <input type='text' required={true}placeholder={'price'} {...register('price')}/> </label>
+                <label> year: <input type='text' required={true} placeholder={'year'} {...register('year')}/> </label>
                 <button className={styles.button}>{!carForUpdate?'save':'update'}</button>
             </form>
         </div>
