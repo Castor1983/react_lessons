@@ -20,7 +20,7 @@ const carsReducer = (state = initialState, action) => {
         case carsActionsTypes.DELETE_CAR_BY_ID:
             return {
                 ...state,
-                cars:[...state.cars, action.payload]
+                cars: state.cars.filter((car)=> car.id !== action.payload)
             }
         default:
             return state

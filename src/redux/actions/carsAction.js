@@ -8,7 +8,7 @@ const carsActionsTypes = {
 const carsActions = {
     setCars: (data) => ({type: carsActionsTypes.SET_CARS, payload: data}),
     createCar: (car) => ({type: carsActionsTypes.CREATE_CAR, payload: car}),
-    deleteCarById: (data) => ({type: carsActionsTypes.DELETE_CAR_BY_ID, payload: data}),
+    deleteCarById: (id) => ({type: carsActionsTypes.DELETE_CAR_BY_ID, payload: id}),
     updateCarById: (id, car) => ({type: carsActionsTypes.UPDATE_CAR_BY_ID, payload: id, car})
 
 }
