@@ -35,7 +35,7 @@ const dispatch = useDispatch()
     }
     const update = async ( car) => {
        try {
-           await carService.updateById(carUpdate.id, car);
+           await dispatch(carService.updateById(carUpdate.id, car));
            dispatch (carsActions.updateCarById(carUpdate.id, car));
            reset();
        }catch (e) {
