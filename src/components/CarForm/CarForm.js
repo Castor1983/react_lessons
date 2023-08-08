@@ -5,6 +5,7 @@ import {Context} from "../CarContainer/CarContainer";
 import styles from '../Car.module.css'
 import {useDispatch} from "react-redux";
 import {createCarThunk} from "../../redux/thunks/createCarThunk";
+import {updateCarThunk} from "../../redux/thunks/updateCarThunk";
 const CarForm = () => {
     const { carForUpdate, setCarForUpdate} = useContext(Context)
     const {
@@ -28,10 +29,9 @@ const dispatch = useDispatch()
 
         }
     }
-    const update = async (car) => {
+    const update = async (id, car) => {
        try {
-           await carService.updateById(carForUpdate.id, car)
-           setCarForUpdate();
+           await dispatch(updateCarThunk(id, car))
            reset();
        }catch (e) {
 
@@ -42,7 +42,7 @@ const dispatch = useDispatch()
         <div>
             <form  className={styles.form} onSubmit={handleSubmit(!carForUpdate? save: update)}>
                 <label> brand: <input type='text' required={true} placeholder={'brand'} {...register('brand')}/> </label>
-                <label> price: <input type='text' required={true}placeholder={'price'} {...register('price')}/> </label>
+                <label> price: <input type='text' required={true} placeholder={'price'} {...register('price')}/> </label>
                 <label> year: <input type='text' required={true} placeholder={'year'} {...register('year')}/> </label>
                 <button className={styles.button}>{!carForUpdate?'save':'update'}</button>
             </form>

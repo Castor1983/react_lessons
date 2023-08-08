@@ -22,7 +22,11 @@ const carsReducer = (state = initialState, action) => {
                 ...state,
                 cars: state.cars.filter((car)=> car.id !== action.payload)
             }
-
+        case carsActionsTypes.UPDATE_CAR_BY_ID:
+            return {
+                ...state,
+                cars: state.cars.map(car => car.id === action.payload.id ? action.payload.car : car),
+            }
         default:
             return state
     }
