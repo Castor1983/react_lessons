@@ -2,6 +2,7 @@ import {carsActionsTypes} from "../actions/carsAction";
 
 const initialState = {
     cars: [],
+    car: null
 
 }
 const carsReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const carsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 cars: action.payload
+            }
+        case carsActionsTypes.SET_CAR:
+            return {
+                ...state,
+                car: action.payload
             }
         case carsActionsTypes.CREATE_CAR:
             return {
