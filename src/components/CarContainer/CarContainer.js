@@ -5,12 +5,9 @@ import {Cars} from "../Cars/Cars";
 
 const Context = createContext(null);
 const CarContainer = () => {
-    const [trigger, setTrigger] = useState(null);
     const [carForUpdate, setCarForUpdate] = useState(null);
     return (
         <Context.Provider value={{
-            trigger,
-            setTrigger: () => setTrigger(prev => !prev),
             carForUpdate,
             setCarForUpdate
         }}>

@@ -22,6 +22,7 @@ const carsReducer = (state = initialState, action) => {
                 ...state,
                 cars: state.cars.filter((car)=> car.id !== action.payload)
             }
+
         default:
             return state
     }
