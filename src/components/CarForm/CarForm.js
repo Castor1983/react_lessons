@@ -1,13 +1,13 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {useForm} from "react-hook-form";
 import {carService} from "../../services/carService";
 import {Context} from "../CarContainer/CarContainer";
 import styles from '../Car.module.css'
-import {useDispatch, useSelector} from "react-redux";
-import {carsActions} from "../../redux/actions/carsAction";
+import {useDispatch} from "react-redux";
+
+import {createCarThunk} from "../../redux/thunks/createCarThunk";
 
 const CarForm = () => {
-    const [errors, setErrors] = useState(null);
     const { carForUpdate, setCarForUpdate} = useContext(Context)
     const {
         register,
@@ -20,28 +20,28 @@ const CarForm = () => {
         setValue('price', carForUpdate.price)
         setValue('year', carForUpdate.year)
     }
-    const trigger = useSelector((store)=> store.cars.trigger)
+  //  const trigger = useSelector((store)=> store.cars.trigger) todo
 const dispatch = useDispatch()
     const save = async (car) => {
         try {
-            await carService.create(car);
-            setErrors(null);
+            await  dispatch (createCarThunk(car))
+
             reset();
-            dispatch(carsActions.setTrigger(trigger));
+            //dispatch(carsActions.setTrigger(trigger)); todo
         } catch (e) {
-            setErrors(e.response.data)
+
         }
     }
     const update = async (car) => {
        try {
 
            await carService.updateById(carForUpdate.id, car)
-           setErrors(null);
+
            setCarForUpdate();
-           dispatch(carsActions.setTrigger());
+
            reset();
        }catch (e) {
-           setErrors(e.response.data)
+
        }
 
     }
@@ -53,7 +53,6 @@ const dispatch = useDispatch()
                 <label> year: <input type='text' placeholder={'year'} {...register('year')}/> </label>
                 <button className={styles.button}>{!carForUpdate?'save':'update'}</button>
             </form>
-            {errors&&<h1>{JSON.stringify(errors)}</h1>}
         </div>
     );
 };

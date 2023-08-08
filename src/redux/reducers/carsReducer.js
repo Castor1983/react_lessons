@@ -2,24 +2,25 @@ import {carsActionsTypes} from "../actions/carsAction";
 
 const initialState = {
     cars: [],
-   // trigger: true
+    // trigger: true
 }
-const carsReducer = (state = initialState, action) =>{
-    switch (action.type){
+const carsReducer = (state = initialState, action) => {
+    switch (action.type) {
         case carsActionsTypes.SET_CARS:
-            return{
+            return {
                 ...state,
                 cars: action.payload
             }
-        /*case carsActionsTypes.TRIGGER:
+        case carsActionsTypes.CREATE_CAR:
             return {
                 ...state,
-                trigger: action.payload
-            }*/
+                cars: [...state.cars, action.payload]
+            }
+
         case carsActionsTypes.DELETE_CAR_BY_ID:
             return {
                 ...state,
-                cars: action.payload
+                cars:[...state.cars, action.payload]
             }
         default:
             return state
