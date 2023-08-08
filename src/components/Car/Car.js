@@ -9,14 +9,14 @@ const Car = ({car}) => {
     const {id, brand, price, year} = car;
     const {setCarForUpdate} = useContext(Context);
 const dispatch = useDispatch()
-    const trigger = useSelector((store)=> store.cars.trigger)
+    //const trigger = useSelector((store)=> store.cars.trigger) todo
     const deleteCar = async ()=> {
         try {
-await carService.deleteById(id);
+await carService.deleteById(dispatch(carsActions.deleteCarById(id)));
         }catch (e){
             console.log(e.response.data)
         }finally {
-            dispatch(carsActions.setTrigger(trigger));
+           // dispatch(carsActions.setTrigger(trigger)); todo
         }
     }
     return (

@@ -20,14 +20,14 @@ const CarForm = () => {
         setValue('price', carForUpdate.price)
         setValue('year', carForUpdate.year)
     }
-    const triggerr = useSelector((store)=> store.cars.trigger)
+    const trigger = useSelector((store)=> store.cars.trigger)
 const dispatch = useDispatch()
     const save = async (car) => {
         try {
             await carService.create(car);
             setErrors(null);
             reset();
-            dispatch(carsActions.setTrigger(triggerr));
+            dispatch(carsActions.setTrigger(trigger));
         } catch (e) {
             setErrors(e.response.data)
         }
