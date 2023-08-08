@@ -4,9 +4,7 @@ import {carService} from "../../services/carService";
 import {Context} from "../CarContainer/CarContainer";
 import styles from '../Car.module.css'
 import {useDispatch} from "react-redux";
-
 import {createCarThunk} from "../../redux/thunks/createCarThunk";
-
 const CarForm = () => {
     const { carForUpdate, setCarForUpdate} = useContext(Context)
     const {
@@ -20,25 +18,20 @@ const CarForm = () => {
         setValue('price', carForUpdate.price)
         setValue('year', carForUpdate.year)
     }
-  //  const trigger = useSelector((store)=> store.cars.trigger) todo
+
 const dispatch = useDispatch()
     const save = async (car) => {
         try {
             await  dispatch (createCarThunk(car))
-
             reset();
-            //dispatch(carsActions.setTrigger(trigger)); todo
         } catch (e) {
 
         }
     }
     const update = async (car) => {
        try {
-
            await carService.updateById(carForUpdate.id, car)
-
            setCarForUpdate();
-
            reset();
        }catch (e) {
 

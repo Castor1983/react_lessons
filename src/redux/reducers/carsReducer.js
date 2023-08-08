@@ -2,7 +2,7 @@ import {carsActionsTypes} from "../actions/carsAction";
 
 const initialState = {
     cars: [],
-    // trigger: true
+
 }
 const carsReducer = (state = initialState, action) => {
     switch (action.type) {

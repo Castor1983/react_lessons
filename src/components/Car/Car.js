@@ -1,8 +1,6 @@
 import React, {useContext} from 'react';
 import {Context} from "../CarContainer/CarContainer";
-
 import styles from '../Car.module.css'
-
 import {useDispatch} from "react-redux";
 import {deleteCarThunk} from "../../redux/thunks/deleteCarThunk";
 
@@ -26,7 +24,7 @@ await dispatch(deleteCarThunk(id));
             <div> price: {price}</div>
             <div> year: {year}</div>
             <button className={styles.button} onClick={()=> setCarForUpdate(car)}>update</button>
-            <button className={styles.button} onClick={ ()=> deleteCar()} >delete</button>
+            <button className={styles.button} onClick={ ()=> deleteCar(id)} >delete</button>
         </div>
     );
 };
