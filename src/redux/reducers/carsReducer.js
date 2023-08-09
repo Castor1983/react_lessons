@@ -32,6 +32,7 @@ const carsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 cars: state.cars.map(car => car.id === action.payload.id ? action.payload.car : car),
+                car: null
             }
         default:
             return state
