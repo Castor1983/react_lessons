@@ -5,8 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import styles from '../Car.module.css'
 import {createCarThunk} from "../../redux/thunks/createCarThunk";
 import {updateCarThunk} from "../../redux/thunks/updateCarThunk";
-import {carService} from "../../services/carService";
-import {carsActions} from "../../redux/actions/carsAction";
+
 
 const CarForm = () => {
     const carUpdate = useSelector((store) => store.cars.car)
@@ -23,10 +22,11 @@ const CarForm = () => {
     }
 
     const dispatch = useDispatch()
-
+const createCar = (car)=> dispatch(createCarThunk(car))
+const updateCar = (car)=> dispatch(updateCarThunk(carUpdate.id,car))
     const save = async (car) => {
         try {
-            await dispatch(createCarThunk(car))
+            await createCar(car)
             reset();
         } catch (e) {
 
@@ -34,8 +34,8 @@ const CarForm = () => {
     }
     const update = async (car) => {
         try {
-            await carService.updateById(carUpdate.id, car);
-            dispatch(carsActions.updateCarById(carUpdate.id, car));
+            await
+            updateCar(car);
             reset();
         } catch (e) {
 
