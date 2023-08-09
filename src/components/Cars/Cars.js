@@ -1,14 +1,16 @@
 import React, {useEffect} from 'react';
-import {Car} from "../Car/Car";
 import {useDispatch, useSelector} from "react-redux";
 import {getCarsThunk} from "../../redux/thunks/getCarsThunk";
 
+import {Car} from "../Car/Car";
+
 const Cars = () => {
-    const cars = useSelector((store)=> store.cars.cars)
+    const cars = useSelector((store) => store.cars.cars)
     const dispatch = useDispatch()
     const getCars = () => dispatch(getCarsThunk())
+
     useEffect(() => {
-getCars();
+        getCars();
     }, [])
     console.log(cars)
     return (

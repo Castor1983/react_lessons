@@ -1,7 +1,8 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
-import styles from '../Car.module.css'
 import {useDispatch, useSelector} from "react-redux";
+
+import styles from '../Car.module.css'
 import {createCarThunk} from "../../redux/thunks/createCarThunk";
 import {updateCarThunk} from "../../redux/thunks/updateCarThunk";
 import {carService} from "../../services/carService";
