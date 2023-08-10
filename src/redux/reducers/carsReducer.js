@@ -1,8 +1,8 @@
 import {carsActionsTypes} from "../actions/carsAction";
 
 const initialState = {
-    cars: [],
-    car: null
+    car: null,
+    cars: []
 
 }
 const carsReducer = (state = initialState, action) => {
@@ -31,8 +31,8 @@ const carsReducer = (state = initialState, action) => {
         case carsActionsTypes.UPDATE_CAR_BY_ID:
             return {
                 ...state,
-                cars: state.cars.map(car => car.id === action.payload.id ? action.payload.car : car),
-                car: null
+                car: null,
+                cars: state.cars.map(car => car.id === action.payload.id ? action.payload : car)
             }
         default:
             return state

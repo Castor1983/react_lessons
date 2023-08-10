@@ -11,7 +11,7 @@ const carsActions = {
     createCar: (car) => ({type: carsActionsTypes.CREATE_CAR, payload: car}),
     setCar: (car) => ({type: carsActionsTypes.SET_CAR, payload: car}),
     deleteCarById: (id) => ({type: carsActionsTypes.DELETE_CAR_BY_ID, payload: id}),
-    updateCarById: (id, car) => ({type: carsActionsTypes.UPDATE_CAR_BY_ID, payload: {id, car}})
+    updateCarById: (data) => ({type: carsActionsTypes.UPDATE_CAR_BY_ID, payload: data})
 
 }
 export {carsActions, carsActionsTypes}

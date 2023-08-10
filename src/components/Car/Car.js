@@ -8,8 +8,8 @@ import styles from '../Car.module.css'
 const Car = ({car}) => {
     const {id, brand, price, year} = car;
     const dispatch = useDispatch()
-    const deleteCar = async (id) => {
-        await dispatch(deleteCarThunk(id));
+    const deleteCar = (id) => {
+         dispatch(deleteCarThunk(id));
     }
     return (
         <div className={styles.container}>
