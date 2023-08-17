@@ -15,7 +15,7 @@ const CarForm = () => {
         handleSubmit, setValue,
         reset
     } = useForm();
-    useMemo(() => {
+    useMemo(()=> {
         if (carUpdate) {
             setValue('brand', carUpdate.brand)
             setValue('price', carUpdate.price)
@@ -24,17 +24,17 @@ const CarForm = () => {
     }, [carUpdate])
 
     const dispatch = useDispatch()
-    const createCar = (car) => dispatch(createCarThunk(car))
-    const save = (car) => {
-        createCar(car)
-        reset();
-    }
-    const update = (car) => {
-        updateCar(car);
-        reset();
+const createCar = (car)=> dispatch(createCarThunk(car))
+    const save =  (car) => {
+             createCar(car)
+            reset();
+        }
+    const update =  (car) => {
+            updateCar(car);
+            reset();
 
     }
-    const updateCar = (car) => dispatch(updateCarThunk(carUpdate.id, car))
+    const updateCar = (car)=> dispatch(updateCarThunk(carUpdate.id,car))
     return (
         <div>
             {}
