@@ -18,7 +18,7 @@ const Characters = () => {
         characterService.getByIds(ids).then(({data}) => {
             dispatch(charactersActions.set(data))
         })
-    }, [ids, dispatch])
+    }, [ids, dispatch, characters])
 
     return (
 

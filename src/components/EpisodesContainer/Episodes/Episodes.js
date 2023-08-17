@@ -17,7 +17,7 @@ const Episodes = () => {
             dispatch(episodesActions.set(data))
             setQuery(prev => ({...prev, page: prev.get('page')}))
         })
-    }, [query, dispatch])
+    }, [query, dispatch, setQuery])
 
     return (
         <div className={css.Episodes}>
