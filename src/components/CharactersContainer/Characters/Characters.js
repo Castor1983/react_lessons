@@ -14,9 +14,8 @@ const Characters = () => {
     const {state: {ids}} = useLocation();
 
     useEffect(() => {
-        console.log(characters, 'empty');
             dispatch(characterActions.getByIds(ids))
-        }, [characters, dispatch])
+        }, [ dispatch])
 
     return (
         <div>

@@ -5,10 +5,10 @@ const initialState = {
     characters: []
 }
 const getByIds = createAsyncThunk('charactersSlice/getByIds',
-    async (_, thunkAPI)=>{
+    async (ids, thunkAPI)=>{
         try {
-            const{data} = await characterService.getByIds();
-            return console.log(data)
+            const{data} = await characterService.getByIds(ids);
+            return data
         }catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
@@ -17,11 +17,11 @@ const charactersSlice = createSlice({
     name: 'charactersSlice',
     initialState,
     reducers:{},
-    extraReducers:{
-        [getByIds.fulfilled]: (state, action)=> {
+    extraReducers: builder => builder
+        .addCase(getByIds.fulfilled, (state, action)=> {
             state.characters = action.payload
-        }
-    }
+        })
+
 });
 const {reducer: characterReducer, actions} = charactersSlice;
 

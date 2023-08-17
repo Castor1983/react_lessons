@@ -14,7 +14,6 @@ const Episodes = () => {
 
     useEffect(() => {
             dispatch(episodeActions.all(query.get('page')));
-            console.log(query.get('page'))
             setQuery(prev => ({...prev, page: prev.get('page')}))
         }
     , [ query, dispatch, setQuery])
