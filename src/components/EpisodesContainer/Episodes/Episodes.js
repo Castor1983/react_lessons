@@ -9,14 +9,15 @@ import css from './Episodes.module.css';
 const Episodes = () => {
     const dispatch = useDispatch();
     const {episodes} = useSelector(state => state.episodes);
-console.log(episodes)
+
     const [query, setQuery] = useSearchParams({page: '1'});
 
     useEffect(() => {
-            dispatch(episodeActions.all(query))
+            dispatch(episodeActions.all(query.get('page')));
+            console.log(query.get('page'))
             setQuery(prev => ({...prev, page: prev.get('page')}))
         }
-    , [  dispatch])
+    , [ query, dispatch, setQuery])
 
     return (
         <div className={css.Episodes}>

@@ -9,9 +9,11 @@ const initialState = {
     page: 1
 }
 const all = createAsyncThunk('episodesSlice/all',
-    async (_, thunkAPI)=>{
+    async (page, thunkAPI)=>{
+    console.log(page)
     try {
-        const{data} = await episodesService.getAll();
+        const{data} = await episodesService.getAll(page);
+        console.log(data)
         return data
     }catch (e) {
         return thunkAPI.rejectWithValue(e.response.data)
