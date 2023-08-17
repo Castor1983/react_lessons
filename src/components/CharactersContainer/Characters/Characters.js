@@ -11,11 +11,11 @@ import {Character} from "../Character/Character";
 const Characters = () => {
     const dispatch = useDispatch();
     const {characters} = useSelector(state => state.characters);
-   // const {state: {ids}} = useLocation();
+    const {state: {ids}} = useLocation();
 
     useEffect(() => {
         console.log(characters, 'empty');
-            dispatch(characterActions.getByIds())
+            dispatch(characterActions.getByIds(ids))
         }, [characters, dispatch])
 
     return (

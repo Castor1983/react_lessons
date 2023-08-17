@@ -9,18 +9,18 @@ import css from './Episodes.module.css';
 const Episodes = () => {
     const dispatch = useDispatch();
     const {episodes} = useSelector(state => state.episodes);
-
-    //const [query, setQuery] = useSearchParams({page: '1'});
+console.log(episodes)
+    const [query, setQuery] = useSearchParams({page: '1'});
 
     useEffect(() => {
-            dispatch(episodeActions.all())
-            //setQuery(prev => ({...prev, page: prev.get('page')}))
+            dispatch(episodeActions.all(query))
+            setQuery(prev => ({...prev, page: prev.get('page')}))
         }
-    , [episodes, dispatch])
+    , [  dispatch])
 
     return (
         <div className={css.Episodes}>
-            {episodes.map(episode => <Episode key={episode.id} episode={episode}/>)}
+            {episodes?.map(episode => <Episode key={episode.id} episode={episode}/>)}
         </div>
     );
 };

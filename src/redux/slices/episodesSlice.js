@@ -12,7 +12,7 @@ const all = createAsyncThunk('episodesSlice/all',
     async (_, thunkAPI)=>{
     try {
         const{data} = await episodesService.getAll();
-        return console.log(data)
+        return data
     }catch (e) {
         return thunkAPI.rejectWithValue(e.response.data)
     }
@@ -23,7 +23,15 @@ const episodesSlice = createSlice({
     reducers:{},
     extraReducers:{
 [all.fulfilled]: (state, action)=> {
-    state.episodes = action.payload
+    state.episodes = action.payload.results
+        .map(episode => (
+            {
+                ...episode,
+                characters: episode.characters.map(character => character.split('/').slice(-1)[0]).join(',')
+            })
+        );
+        state.prevPage = action.payload.info?.prev;
+        state.nextPage = action.payload.info?.next
 }
     }
 });
